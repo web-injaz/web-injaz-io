@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+const PORT = process.env.PORT || 3001;
+const URL = process.env.NODE_ENV == 'production' ? 'https://webinjaz.herokuapp.com/' : 'http://localhost:'+PORT;
+
 export const REQ_SHAPES = 'REQ_SHAPES';
 function reqShapes() {
     return {
@@ -26,7 +29,7 @@ function resShapesError(err) {
 export function getShapesList() {
     return function(dispatch) {
         dispatch(reqShapes());
-        axios.get('http://localhost:3001/shapes')
+        axios.get(`${URL}/shapes`)
             .then(res => {
                 dispatch(resShapes(res.data));
             },

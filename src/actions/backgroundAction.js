@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+const PORT = process.env.PORT || 3001;
+const URL = process.env.NODE_ENV == 'production' ? 'https://webinjaz.herokuapp.com/' : 'http://localhost:'+PORT;
+
 export const REQ_CSS = 'REQ_CSS';
 function reqCss(params) {
     return {
@@ -28,7 +31,7 @@ function resError(error) {
 export function changeBackground(variables) {    
     return function(dispatch) {
         dispatch(reqCss(variables));
-        return axios.get('http://localhost:3001/bg', {
+        return axios.get(`${URL}/bg`, {
             params: variables
         }).then(res => {
             if (res.status === 200 && res.headers['content-type'] === "text/css") {
