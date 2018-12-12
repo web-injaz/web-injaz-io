@@ -27,7 +27,6 @@ app.all('/', function(req, res) {
 });
 
 app.all('*', (req, res) => {
-    console.log('404');
     return res.sendStatus(404);
 });
 
