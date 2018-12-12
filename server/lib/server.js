@@ -10,10 +10,10 @@ var path = require('path');
 
 // env variables
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/webinjaz-io';
+// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/webinjaz-io';
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+// mongoose.Promise = Promise;
+// mongoose.connect(MONGODB_URI);
 
 app.use(bodyParser.json(), cors());
 
