@@ -1,0 +1,58 @@
+{
+  "name": "webinjaz-io",
+  "version": "1.0.0",
+  "description": "Web Injaz css framework main page",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "mongoose": "^5.3.14",
+    "node-sass": "^4.10.0",
+    "superagent": "^4.0.0",
+    "axios": "^0.18.0",
+    "mdbreact": "^4.8.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-highlight": "^0.12.0",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.2",
+    "wi-framework": "^2.2.5",
+    "wi-theme-famous": "^1.0.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-injaz/web-injaz-io.git"
+  },
+  "keywords": [
+    "webinjaz"
+  ],
+  "author": "webinjaz.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-injaz/web-injaz-io/issues"
+  }
+}

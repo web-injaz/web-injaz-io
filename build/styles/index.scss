@@ -1,0 +1,274 @@
+@import '../../node_modules/wi-framework/index';
+@import '../../node_modules/wi-framework/bootstrap/components/all';
+@import '../../node_modules/wi-theme-famous/shapes';
+
+@include create-background('dark', #343a40);
+
+.hidden {
+    display: none;
+}
+
+.text-error {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: 1px solid $contrast-10;
+    padding: 0 !important;
+    overflow: hidden;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+code {
+    text-align: left;
+    border-radius: .25rem;
+}
+
+p {
+    font-weight: 200;
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+strong {
+    font-weight: 600;
+}
+
+svg {
+    position: absolute;
+    &.sh-0 {
+        width: 100px;
+        left: 1rem;
+        top: 1rem;
+        fill: $contrast-20;
+    }
+    &.sh-1 {
+        width: 50px;
+        left: 1rem;
+        bottom: 1rem;
+        fill: $contrast-30;
+    }
+    &.sh-2 {
+        width: 100px;
+        right: 1rem;
+        top: 1rem;
+        fill: $contrast-40;
+    }
+    &.sh-3 {
+        width: 75px;
+        right: 1rem;
+        bottom: 1rem;
+        fill: $contrast-50;
+    }
+    &.sh-4 {
+        width: 25px;
+        right: 40%;
+        bottom: 10%;
+        fill: $contrast-10;
+    }
+    &.sh-5 {
+        width: 25px;
+        left: 40%;
+        bottom: 10%;
+        fill: $contrast-30;
+    }
+    &.sh-6 {
+        width: 25px;
+        left: 40%;
+        top: 10%;
+        fill: $contrast-20;
+    }
+    &.sh-7 {
+        width: 25px;
+        right: 40%;
+        top: 10%;
+        fill: $contrast-40;
+    }
+    &.sh-8 {
+        width: 25px;
+        right: 20%;
+        top: 30%;
+        fill: $contrast-10;
+    }
+    &.sh-9 {
+        width: 25px;
+        right: 20%;
+        bottom: 30%;
+        fill: $contrast-40;
+    }
+    &.sh-10 {
+        width: 25px;
+        left: 20%;
+        top: 30%;
+        fill: $contrast-30;
+    }
+    &.sh-11 {
+        width: 25px;
+        left: 20%;
+        bottom: 30%;
+        fill: $contrast-20;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 3rem;
+    background-color: $contrast-20;
+    img {
+        height: 50px;
+    }
+    a {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+}
+
+.intro-section {
+    text-align: center;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(60deg, rgba($bw-01,$bw-01,$bw-01, 0), rgba($bw-01,$bw-01,$bw-01, .15), rgba($bw-01,$bw-01,$bw-01, 0));
+    }
+    .jumbotron {
+        background-color: $background;
+        padding: 10rem 1rem;
+        border-radius: 0;
+        margin-bottom: 0;
+        h1 {
+            margin-bottom: 3rem;
+            font-size: 3.5rem;
+            font-weight: 100;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.about-section {
+    padding: 4rem 0;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(60deg, rgba($bw-01,$bw-01,$bw-01, 0), rgba($bw-01,$bw-01,$bw-01, .1));
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+.create-background {
+    padding: 4rem 0;
+    text-align: center;
+    form {
+        input, button {
+            display: block;
+            text-align: center;
+            font-weight: 500;
+            margin: 1rem auto;
+            padding: .5rem 1rem;
+            border-radius: 4rem;
+            width: 15rem;
+            box-shadow: none;
+            outline: none;
+        }
+        button {
+            border: 0;
+        }
+        textarea {
+            height: 400px !important;
+        }
+    }
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(60deg, 
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.3) 20%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.25) 20%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.23) 30%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.19) 30%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15) 40%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.13) 40%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.1) 50%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.07) 50%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.05) 60%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.04) 60%,
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02) 70%, 
+            rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0) 70%);
+    }
+}
+
+.docs-section {
+    padding: 4rem 0;
+    position: relative;
+    z-index: 99;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        background: $contrast-10 linear-gradient(90deg, 
+            rgba($bw-01, $bw-01, $bw-01, 0),
+            rgba($bw-01, $bw-01, $bw-01, 0.1),
+            rgba($bw-01, $bw-01, $bw-01, 0));
+    }
+}
+
+footer {
+    background-color: $contrast-20;
+    color: $text;
+    font-weight: 100;
+    text-align: center;
+    padding: .25rem 0;
+    img {
+        height: 30px;
+    }
+    a {
+        font-weight: 600;
+        color: $text;
+    }
+}
+
+.shaper-section {
+    text-align: center;
+    padding: 4rem 0;
+    .nav {
+
+    }
+    .nav-link {
+        cursor: pointer;
+    }
+}

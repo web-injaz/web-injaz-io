@@ -1,0 +1,13 @@
+{
+  "name": "Web Injaz Framework",
+  "description": "Css framework to simplify the Coloring and Styling.",
+  "repository": "https://github.com/web-injaz/web-injaz-io",
+  "logo": "https://github.com/web-injaz/web-injaz-io/logo.png",
+  "keywords": [
+    "webinjaz",
+    "web-injaz",
+    "css",
+    "framework"
+  ],
+  "image": "heroku/nodejs"
+}
