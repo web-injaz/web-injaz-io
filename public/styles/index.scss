@@ -1,3 +1,6 @@
+$primary: #336;
+$secondary: #223291;
+
 @import '../../node_modules/wi-framework/index';
 @import '../../node_modules/wi-framework/bootstrap/components/all';
 @import '../../node_modules/wi-theme-famous/shapes';
@@ -15,7 +18,7 @@
 
 input[type="color"] {
 	-webkit-appearance: none;
-	border: 1px solid $contrast-10;
+	border: 1px solid $contrast;
     padding: 0 !important;
     overflow: hidden;
 }
@@ -75,7 +78,7 @@ svg {
         width: 25px;
         right: 40%;
         bottom: 10%;
-        fill: $contrast-10;
+        fill: $contrast;
     }
     &.sh-5 {
         width: 25px;
@@ -99,7 +102,7 @@ svg {
         width: 25px;
         right: 20%;
         top: 30%;
-        fill: $contrast-10;
+        fill: $contrast;
     }
     &.sh-9 {
         width: 25px;
@@ -240,7 +243,7 @@ header {
         right: 0;
         left: 0;
         z-index: -1;
-        background: $contrast-10 linear-gradient(90deg, 
+        background: $contrast linear-gradient(90deg, 
             rgba($bw-01, $bw-01, $bw-01, 0),
             rgba($bw-01, $bw-01, $bw-01, 0.1),
             rgba($bw-01, $bw-01, $bw-01, 0));
