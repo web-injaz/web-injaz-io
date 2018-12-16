@@ -2,8 +2,9 @@
 
 const cors = require('cors');
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
 var path = require('path');
@@ -14,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 // mongoose.Promise = Promise;
 // mongoose.connect(MONGODB_URI);
-
+app.use(compression());
 app.use(bodyParser.json(), cors());
 
 const routes = require('../route/routes');
