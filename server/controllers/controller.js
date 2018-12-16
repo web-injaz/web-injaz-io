@@ -6,8 +6,8 @@ const shapesDB = require('../shapes');
 exports.bgSassJson = (req, res) => {
     // URL Params
     const params = req.query;
-
-    const sassData = `$name: ${params.name};$color: ${params.color};$enable-default-root: false;@import "wi-framework/variables/index";@import "wi-framework/colors/index";$name: 'dark' !default;$color: #343a40 !default;@include create-background($name, $color);`;
+    
+    const sassData = `$primary: ${params.name};$color: ${params.color};$enable-default-root: false;@import "wi-framework/variables/index";@import "wi-framework/colors/index";$name: 'dark' !default;$color: #343a40 !default;@include create-background($name, $color);`;
 
     var result = Sass.renderSync({
         data: sassData,

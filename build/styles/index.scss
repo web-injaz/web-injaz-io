@@ -5,7 +5,7 @@ $secondary: #223291;
 @import '../../node_modules/wi-framework/bootstrap/components/all';
 @import '../../node_modules/wi-theme-famous/shapes';
 
-@include create-background('dark', #343a40);
+// @include create-background('dark', #343a40);
 
 .hidden {
     display: none;
@@ -48,75 +48,109 @@ strong {
     font-weight: 600;
 }
 
+@keyframes little {
+    0%, 100% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
 svg {
     position: absolute;
+    animation: little 2s infinite 0s ease;
     &.sh-0 {
+        animation-delay: .0s;
+        animation-duration: 3s;
         width: 100px;
         left: 1rem;
         top: 1rem;
         fill: $contrast-20;
     }
     &.sh-1 {
+        animation-delay: .1s;
+        animation-duration: 2s;
         width: 50px;
         left: 1rem;
         bottom: 1rem;
         fill: $contrast-30;
     }
     &.sh-2 {
+        animation-delay: .2s;
+        animation-duration: 3s;
         width: 100px;
         right: 1rem;
         top: 1rem;
         fill: $contrast-40;
     }
     &.sh-3 {
+        animation-delay: .3s;
+        animation-duration: 3s;
         width: 75px;
         right: 1rem;
         bottom: 1rem;
         fill: $contrast-50;
     }
     &.sh-4 {
+        animation-delay: .4s;
+        animation-duration: 4s;
         width: 25px;
         right: 40%;
         bottom: 10%;
         fill: $contrast;
     }
     &.sh-5 {
+        animation-delay: .5s;
+        animation-duration: 5s;
         width: 25px;
         left: 40%;
         bottom: 10%;
         fill: $contrast-30;
     }
     &.sh-6 {
+        animation-delay: .6s;
+        animation-duration: 3s;
         width: 25px;
         left: 40%;
         top: 10%;
         fill: $contrast-20;
     }
     &.sh-7 {
+        animation-delay: .7s;
+        animation-duration: 2s;
         width: 25px;
         right: 40%;
         top: 10%;
         fill: $contrast-40;
     }
     &.sh-8 {
+        animation-delay: .8s;
+        animation-duration: 2s;
         width: 25px;
         right: 20%;
         top: 30%;
         fill: $contrast;
     }
     &.sh-9 {
+        animation-delay: .9s;
+        animation-duration: 4s;
         width: 25px;
         right: 20%;
         bottom: 30%;
         fill: $contrast-40;
     }
     &.sh-10 {
+        animation-delay: .10s;
+        animation-duration: 5s;
         width: 25px;
         left: 20%;
         top: 30%;
         fill: $contrast-30;
     }
     &.sh-11 {
+        animation-delay: .11s;
+        animation-duration: 3s;
         width: 25px;
         left: 20%;
         bottom: 30%;
@@ -193,12 +227,17 @@ header {
             display: block;
             text-align: center;
             font-weight: 500;
-            margin: 1rem auto;
+            margin: 0 auto 1rem auto;
             padding: .5rem 1rem;
             border-radius: 4rem;
             width: 15rem;
             box-shadow: none;
             outline: none;
+        }
+        label {
+            font-weight: 400;
+            font-weight: 1.1rem;
+            text-transform: capitalize;
         }
         button {
             border: 0;

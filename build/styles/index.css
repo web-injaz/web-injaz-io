@@ -8702,47 +8702,6 @@ textarea.form-control {
     .dropdown .dropdown-menu .dropdown-item:hover {
       background-color: var(--contrast-10); }
 
-.bg-dark {
-  --background: #343a40;
-  --text: white;
-  --main: #414181;
-  --second: #2a3db2;
-  --headers: #414181;
-  --links: #96a0aa;
-  --bw-01: 255;
-  --light-inverse: #99a1cc;
-  --text-light-inverse: black;
-  --dark-inverse: #a1a1b9;
-  --text-dark-inverse: black;
-  --contrast: #96a0aa;
-  --contrast-10: #4b545c;
-  --contrast-20: #626d78;
-  --contrast-30: #7a8793;
-  --contrast-40: #96a0aa;
-  --contrast-50: #b2bac1;
-  --contrast-60: #ced3d8;
-  --contrast-70: #ebedee;
-  --contrast-80: white;
-  --contrast-90: white;
-  --trans-10: rgba(52, 58, 64, 0.1);
-  --trans-20: rgba(52, 58, 64, 0.2);
-  --trans-30: rgba(52, 58, 64, 0.3);
-  --trans-40: rgba(52, 58, 64, 0.4);
-  --trans-50: rgba(52, 58, 64, 0.5);
-  --trans-60: rgba(52, 58, 64, 0.6);
-  --trans-70: rgba(52, 58, 64, 0.7);
-  --trans-80: rgba(52, 58, 64, 0.8);
-  --trans-90: rgba(52, 58, 64, 0.9);
-  --gray-10: #484e53;
-  --gray-20: #5d6166;
-  --gray-30: #717579;
-  --gray-40: #85898c;
-  --gray-50: #9a9da0;
-  --gray-60: #aeb0b3;
-  --gray-70: #c2c4c6;
-  --gray-80: #d6d8d9;
-  --gray-90: #ebebec; }
-
 .hidden {
   display: none; }
 
@@ -8777,64 +8736,94 @@ h3 {
 strong {
   font-weight: 600; }
 
+@keyframes little {
+  0%, 100% {
+    transform: scale(0.9); }
+  50% {
+    transform: scale(1); } }
 svg {
-  position: absolute; }
+  position: absolute;
+  animation: little 2s infinite 0s ease; }
   svg.sh-0 {
+    animation-delay: .0s;
+    animation-duration: 3s;
     width: 100px;
     left: 1rem;
     top: 1rem;
     fill: var(--contrast-20); }
   svg.sh-1 {
+    animation-delay: .1s;
+    animation-duration: 2s;
     width: 50px;
     left: 1rem;
     bottom: 1rem;
     fill: var(--contrast-30); }
   svg.sh-2 {
+    animation-delay: .2s;
+    animation-duration: 3s;
     width: 100px;
     right: 1rem;
     top: 1rem;
     fill: var(--contrast-40); }
   svg.sh-3 {
+    animation-delay: .3s;
+    animation-duration: 3s;
     width: 75px;
     right: 1rem;
     bottom: 1rem;
     fill: var(--contrast-50); }
   svg.sh-4 {
+    animation-delay: .4s;
+    animation-duration: 4s;
     width: 25px;
     right: 40%;
     bottom: 10%;
     fill: var(--contrast); }
   svg.sh-5 {
+    animation-delay: .5s;
+    animation-duration: 5s;
     width: 25px;
     left: 40%;
     bottom: 10%;
     fill: var(--contrast-30); }
   svg.sh-6 {
+    animation-delay: .6s;
+    animation-duration: 3s;
     width: 25px;
     left: 40%;
     top: 10%;
     fill: var(--contrast-20); }
   svg.sh-7 {
+    animation-delay: .7s;
+    animation-duration: 2s;
     width: 25px;
     right: 40%;
     top: 10%;
     fill: var(--contrast-40); }
   svg.sh-8 {
+    animation-delay: .8s;
+    animation-duration: 2s;
     width: 25px;
     right: 20%;
     top: 30%;
     fill: var(--contrast); }
   svg.sh-9 {
+    animation-delay: .9s;
+    animation-duration: 4s;
     width: 25px;
     right: 20%;
     bottom: 30%;
     fill: var(--contrast-40); }
   svg.sh-10 {
+    animation-delay: .10s;
+    animation-duration: 5s;
     width: 25px;
     left: 20%;
     top: 30%;
     fill: var(--contrast-30); }
   svg.sh-11 {
+    animation-delay: .11s;
+    animation-duration: 3s;
     width: 25px;
     left: 20%;
     bottom: 30%;
@@ -8898,12 +8887,16 @@ header {
     display: block;
     text-align: center;
     font-weight: 500;
-    margin: 1rem auto;
+    margin: 0 auto 1rem auto;
     padding: .5rem 1rem;
     border-radius: 4rem;
     width: 15rem;
     box-shadow: none;
     outline: none; }
+  .create-background form label {
+    font-weight: 400;
+    font-weight: 1.1rem;
+    text-transform: capitalize; }
   .create-background form button {
     border: 0; }
   .create-background form textarea {

@@ -29,8 +29,9 @@ export function changeBackground(variables) {
     return function(dispatch) {
         dispatch(reqCss(variables));
         return axios.get(`https://webinjaz.herokuapp.com/bg`, {
+        // return axios.get(`http://localhost:3001/bg`, {
             params: variables
-        }).then(res => {
+        }).then(res => {            
             if (res.status === 200 && res.headers['content-type'] === "text/css") {
                 dispatch(resCss(variables, res.data));
             } else {

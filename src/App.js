@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './background.css';
-
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Intro from './components/Intro';
@@ -19,7 +17,7 @@ class App extends Component {
     const Main = styled.div`${this.props.css}`;
     return (
       <Main>
-        <div className={`App bg-${this.props.class}`}>
+        <div className={`App bg-dark`}>
           <Header />
           <Intro />
           <About />

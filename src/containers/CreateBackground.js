@@ -13,8 +13,8 @@ class CreateBackground extends Component {
 
         this.state = {
             variables: {
-                name: '',
-                color: '#fff000'
+                name: '#eeeeee',
+                color: '#343a40'
             }
         }
     }
@@ -56,27 +56,26 @@ class CreateBackground extends Component {
                         <MDBCol md="12">
                             <Form className="needs-validation" submite={this.handleSubmit}>
                                 <div className="form-group">
+                                    <label htmlFor="colorName">Primary color</label>
                                     <input 
                                         name="name" 
-                                        type="text"
+                                        type="color"
                                         className="form-control required" 
                                         id="colorName" 
-                                        aria-describedby="emailHelp" 
                                         placeholder="Name"
                                         value={this.state.variables.name} 
                                         onChange={this.handleChange}
-                                        pattern="[a-z]+"
                                         required
                                         />
                                     <small id="emailHelp" className="form-text invalid-feedback"></small>
                                 </div>
                                 <div className="form-group">
+                                    <label htmlFor="colorValue">Background color</label>
                                     <input 
                                         name="color" 
                                         type="color"
                                         className="form-control required" 
                                         id="colorValue" 
-                                        aria-describedby="emailHelp" 
                                         placeholder="Color"
                                         value={this.state.variables.color} 
                                         onChange={this.handleChange}
