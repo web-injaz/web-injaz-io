@@ -62,21 +62,21 @@ class Shaper extends Component {
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src="/images/slide1.jpg" alt="Free vector art via https://Vecteezy.com" />
+                            <img className="d-block w-100" src="/images/slide1.webp" alt="Free vector art via https://Vecteezy.com" />
                             <div className="carousel-caption">
                                 <h5>{shapeName}</h5>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo quisquam nostrum, distinctio fuga, facilis similique natus illum fugiat dolore assumenda harum. Eligendi dolorum consequatur eveniet sed blanditiis sit aspernatur fugiat.</p>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src="/images/slide2.jpg" alt="Free vector art via https://Vecteezy.com" />
+                            <img className="d-block w-100" src="/images/slide2.webp" alt="Free vector art via https://Vecteezy.com" />
                             <div className="carousel-caption">
                                 <h5>{shapeName}</h5>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo quisquam nostrum, distinctio fuga, facilis similique natus illum fugiat dolore assumenda harum. Eligendi dolorum consequatur eveniet sed blanditiis sit aspernatur fugiat.</p>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src="/images/slide3.jpg" alt="Free vector art via https://Vecteezy.com" />
+                            <img className="d-block w-100" src="/images/slide3.webp" alt="Free vector art via https://Vecteezy.com" />
                             <div className="carousel-caption">
                                 <h5>{shapeName}</h5>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo quisquam nostrum, distinctio fuga, facilis similique natus illum fugiat dolore assumenda harum. Eligendi dolorum consequatur eveniet sed blanditiis sit aspernatur fugiat.</p>
