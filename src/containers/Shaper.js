@@ -200,7 +200,7 @@ class Shaper extends Component {
 
 const mapStateToProps = state => {
     return {
-        shapesList: state.shapesReducer.shapesList
+        shapesList: state.shapes.shapesList
     }
 }
 

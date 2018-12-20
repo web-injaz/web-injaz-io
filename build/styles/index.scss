@@ -2,7 +2,7 @@ $primary: #336;
 $secondary: #223291;
 
 @import '../../node_modules/wi-framework/index';
-@import '../../node_modules/wi-framework/bootstrap/components/all';
+@import '../../node_modules/wi-framework/components/all';
 @import '../../node_modules/wi-theme-famous/shapes';
 
 // @include create-background('dark', #343a40);
@@ -171,6 +171,11 @@ header {
         font-size: 1.5rem;
         font-weight: 200;
     }
+    .nav-right {
+        a {
+            margin-left: 2rem;
+        }
+    }
 }
 
 .intro-section {
@@ -270,6 +275,12 @@ header {
     }
 }
 
+.build-result {
+    .css {
+        height: 300px;
+    }
+}
+
 .docs-section {
     padding: 4rem 0;
     position: relative;
@@ -312,5 +323,124 @@ footer {
     }
     .nav-link {
         cursor: pointer;
+    }
+}
+
+.build-tool-section {
+    padding: 2rem 0;
+    h2 {
+        text-align: center;
+        font-weight: 200;
+        margin-bottom: 2rem;
+    }
+    .build-colors {
+        form {
+            .form-group {
+                label, input {
+                    display: inline-block;
+                    width: 10rem;
+                    vertical-align: bottom;
+                }
+                input {
+                    border-radius: 30px;
+                    text-align: center
+                }
+            }
+            .other-components {
+                margin-left: 1rem;
+            }
+            .custom-control-input {
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 99999999999;
+            }
+        }
+    }
+}
+
+.build-colors, .build-result, .build-demo {
+    .form-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: .25rem;
+        background-color: rgba($bw-01, $bw-01, $bw-01, 0.05);
+        color: $text;
+        box-shadow: $box-shadow;
+    }
+    .form-section:last-child, .form-group:last-child {
+        margin-bottom: 0;
+    }
+    h4 {
+        margin-bottom: 2rem;
+        font-weight: 300;
+    }
+}
+
+.build-demo {
+    .main-colors {
+        span {
+            display: inline-block;
+            overflow: hidden;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 0 5px 5px 5px;
+            &.primary {background: $main;}
+            &.secondary {background: $second;}
+            &.background {background: $background;}
+            &.light-inverse {background: $light-inverse;}
+            &.text-light-inverse {background: $text-light-inverse;}
+            &.dark-inverse {background: $dark-inverse;}
+            &.text-dark-inverse {background: $text-dark-inverse;}
+            &.contrast {background: $contrast;}
+            &.contrast-10 {background: $contrast-10;}
+            &.contrast-20 {background: $contrast-20;}
+            &.contrast-30 {background: $contrast-30;}
+            &.contrast-40 {background: $contrast-40;}
+            &.contrast-50 {background: $contrast-50;}
+            &.contrast-60 {background: $contrast-60;}
+            &.contrast-70 {background: $contrast-70;}
+            &.contrast-80 {background: $contrast-80;}
+            &.contrast-90 {background: $contrast-90;}
+            &.trans-10 {background: $trans-10;}
+            &.trans-20 {background: $trans-20;}
+            &.trans-30 {background: $trans-30;}
+            &.trans-40 {background: $trans-40;}
+            &.trans-50 {background: $trans-50;}
+            &.trans-60 {background: $trans-60;}
+            &.trans-70 {background: $trans-70;}
+            &.trans-80 {background: $trans-80;}
+            &.trans-90 {background: $trans-90;}
+            &.gray-10 {background: $gray-10;}
+            &.gray-20 {background: $gray-20;}
+            &.gray-30 {background: $gray-30;}
+            &.gray-40 {background: $gray-40;}
+            &.gray-50 {background: $gray-50;}
+            &.gray-60 {background: $gray-60;}
+            &.gray-70 {background: $gray-70;}
+            &.gray-80 {background: $gray-80;}
+            &.gray-90 {background: $gray-90;}
+            &.darken-10 {background: $darken-10;}
+            &.darken-20 {background: $darken-20;}
+            &.darken-30 {background: $darken-30;}
+            &.darken-40 {background: $darken-40;}
+            &.darken-50 {background: $darken-50;}
+            &.darken-60 {background: $darken-60;}
+            &.darken-70 {background: $darken-70;}
+            &.darken-80 {background: $darken-80;}
+            &.darken-90 {background: $darken-90;}
+            &.lighten-10 {background: $lighten-10;}
+            &.lighten-20 {background: $lighten-20;}
+            &.lighten-30 {background: $lighten-30;}
+            &.lighten-40 {background: $lighten-40;}
+            &.lighten-50 {background: $lighten-50;}
+            &.lighten-60 {background: $lighten-60;}
+            &.lighten-70 {background: $lighten-70;}
+            &.lighten-80 {background: $lighten-80;}
+            &.lighten-90 {background: $lighten-90;}
+        }
     }
 }

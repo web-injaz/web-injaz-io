@@ -1,6 +1,7 @@
 var Controller = require('../controllers/controller');
 
 module.exports = function(app) {
-    app.get('/bg', Controller.bgSassJson);
+    app.get('/compile', Controller.compileToCss);
+    app.get('/demo', Controller.demoBackground);
     app.get('/shapes', Controller.shapesList);
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import SVG from './utilities/SVG';
+import SVG from '../utilities/SVG';
 
 const Intro = () => {
     return (

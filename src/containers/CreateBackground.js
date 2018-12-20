@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-// import Highlight from 'react-highlight';
 
 import { changeBackground } from '../actions';
 
-import Form from '../components/utilities/Form';
+import Form from '../utilities/Form';
 
 class CreateBackground extends Component {
     constructor() {
@@ -13,8 +12,8 @@ class CreateBackground extends Component {
 
         this.state = {
             variables: {
-                name: '#eeeeee',
-                color: '#343a40'
+                primary: '#eeeeee',
+                bgColor: '#343a40'
             }
         }
     }
@@ -58,12 +57,12 @@ class CreateBackground extends Component {
                                 <div className="form-group">
                                     <label htmlFor="colorName">Primary color</label>
                                     <input 
-                                        name="name" 
+                                        name="primary" 
                                         type="color"
                                         className="form-control required" 
                                         id="colorName" 
-                                        placeholder="Name"
-                                        value={this.state.variables.name} 
+                                        placeholder="Primary color"
+                                        value={this.state.variables.primary} 
                                         onChange={this.handleChange}
                                         required
                                         />
@@ -72,12 +71,12 @@ class CreateBackground extends Component {
                                 <div className="form-group">
                                     <label htmlFor="colorValue">Background color</label>
                                     <input 
-                                        name="color" 
+                                        name="bgColor" 
                                         type="color"
                                         className="form-control required" 
                                         id="colorValue" 
-                                        placeholder="Color"
-                                        value={this.state.variables.color} 
+                                        placeholder="Background color"
+                                        value={this.state.variables.bgColor} 
                                         onChange={this.handleChange}
                                         required
                                         />
@@ -86,11 +85,6 @@ class CreateBackground extends Component {
                                 <button type="submit">Submit</button>
                             </Form>
                         </MDBCol>
-                        {/* <MDBCol md="12">
-                            <Highlight className={`css ${this.props.css ? '' : 'hidden'}`}>
-                                {this.props.css}
-                            </Highlight>
-                        </MDBCol> */}
                     </MDBRow>
                 </MDBContainer>
             </section>
@@ -100,7 +94,7 @@ class CreateBackground extends Component {
 
 const mapStateToProps = state => {    
     return {
-        error: state.backgroundReducer.error
+        error: state.demo.error
     }
 }
 
