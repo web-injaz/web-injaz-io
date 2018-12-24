@@ -8834,7 +8834,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 3rem;
+  padding: .5rem 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15);
   background-color: var(--contrast-20); }
   header img {
     height: 50px; }
@@ -8952,7 +8953,7 @@ footer {
   padding: 2rem 0; }
   .build-tool-section h2 {
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
     margin-bottom: 2rem; }
   .build-tool-section .build-colors form .form-group label, .build-tool-section .build-colors form .form-group input {
     display: inline-block;
@@ -8971,13 +8972,12 @@ footer {
 
 .build-colors .form-section, .build-result .form-section, .build-demo .form-section {
   padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: .25rem;
-  background-color: rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.05);
-  color: var(--text);
-  box-shadow: 0 0.5rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15); }
-.build-colors .form-section:last-child, .build-colors .form-group:last-child, .build-result .form-section:last-child, .build-result .form-group:last-child, .build-demo .form-section:last-child, .build-demo .form-group:last-child {
-  margin-bottom: 0; }
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.05);
+  transition: .5s background-color ease; }
+  .build-colors .form-section:hover, .build-result .form-section:hover, .build-demo .form-section:hover {
+    background-color: rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.1);
+    transition: .5s background-color ease; }
 .build-colors h4, .build-result h4, .build-demo h4 {
   margin-bottom: 2rem;
   font-weight: 300; }
@@ -9097,5 +9097,8 @@ footer {
     background: var(--lighten-80); }
   .build-demo .main-colors span.lighten-90 {
     background: var(--lighten-90); }
+  .build-demo .main-colors span:hover {
+    transform: scale(1.05);
+    transition: .5s transform ease-in-out; }
 
 /*# sourceMappingURL=index.css.map */

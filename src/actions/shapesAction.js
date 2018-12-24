@@ -26,7 +26,8 @@ function resShapesError(err) {
 export function getShapesList() {
     return function(dispatch) {
         dispatch(reqShapes());
-        axios.get(`https://webinjaz.herokuapp.com/shapes`)
+        axios.get(`https://webinjaz.herokuapp.com/api/shapes`)
+        // axios.get(`http://localhost:3001/api/shapes`)
             .then(res => {
                 dispatch(resShapes(res.data));
             },

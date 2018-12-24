@@ -18,8 +18,12 @@ const PORT = process.env.PORT || 3001;
 app.use(compression());
 app.use(bodyParser.json(), cors());
 
-const routes = require('../route/routes');
-routes(app);
+const Demo = require('../route/demo');
+const Compile = require('../route/compile');
+const Shapes = require('../route/shapes');
+app.use('/api/demo', Demo);
+app.use('/api/compile', Compile);
+app.use('/api/shapes', Shapes);
 
 app.use(express.static(path.join(__dirname, '../../', 'build')))
 

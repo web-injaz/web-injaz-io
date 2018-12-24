@@ -138,7 +138,7 @@ class BuildForm extends Component {
                     />
                 </div>
                 <div className="form-section">
-                    <h4>Import Bootstrap components</h4>
+                    <h4>Import components</h4>
                     <Field
                         name="components"
                         value="all"
@@ -166,6 +166,18 @@ class BuildForm extends Component {
                             type="checkbox"
                             component={renderCheck}
                             label="datepicker"
+                        />
+                        <Field
+                            name="headerSection"
+                            type="checkbox"
+                            component={renderCheck}
+                            label="header-section"
+                        />
+                        <Field
+                            name="panel"
+                            type="checkbox"
+                            component={renderCheck}
+                            label="panel"
                         />
                         <Field
                             name="navbar"
@@ -330,45 +342,47 @@ export default reduxForm({
     form: 'buildForm',
     validate,
     initialValues: {
-        primary: '#9d0000',
-        secondary: '#f2c8c9',
-        bgName: 'main',
-        bgColor: '#572c0f',
-        bgText: '#cccccc',
-        bgHeaders: '#fff000',
-        bgLinks: '#ff00ff',
-        components: 'all',
-        enableRoot: true,
-        enableInverse: true,
-        enableContrast: true,
-        enableTrans: true,
-        enableGray: true,
-        enableDarken: false,
-        enableLighten: false,
-        select2: false,
-        datepicker: false,
-        navbar: false,
-        carousel: false,
-        alert: false,
-        badge: false,
-        breadcrumb: false,
-        buttonGroup: false,
-        buttons: false,
-        card: false,
-        code: false,
-        customForms: false,
-        forms: false,
-        dropdown: false,
-        inputGroup: false,
-        jumbotron: false,
-        listGroup: false,
-        media: false,
-        modal: false,
-        nav: false,
-        pagination: false,
-        popover: false,
-        progress: false,
-        tables: false,
-        tooltip: false,
+        primary: '#a3dbfa',
+        secondary: '#bf99ea',
+        bgName: 'dark',
+        bgColor: '#343a40',
+        // bgText: '#cccccc',
+        // bgHeaders: '#fff000',
+        // bgLinks: '#ff00ff',
+        // components: 'all',
+        // enableRoot: true,
+        // enableInverse: true,
+        // enableContrast: true,
+        // enableTrans: true,
+        // enableGray: true,
+        // enableDarken: false,
+        // enableLighten: false,
+        // select2: false,
+        // headerSection: false,
+        // panel: false,
+        // datepicker: false,
+        // navbar: false,
+        // carousel: false,
+        // alert: false,
+        // badge: false,
+        // breadcrumb: false,
+        // buttonGroup: false,
+        // buttons: false,
+        // card: false,
+        // code: false,
+        // customForms: false,
+        // forms: false,
+        // dropdown: false,
+        // inputGroup: false,
+        // jumbotron: false,
+        // listGroup: false,
+        // media: false,
+        // modal: false,
+        // nav: false,
+        // pagination: false,
+        // popover: false,
+        // progress: false,
+        // tables: false,
+        // tooltip: false,
     }
 })(connect(mapStateToProps)(BuildForm));

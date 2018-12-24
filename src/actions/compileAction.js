@@ -28,8 +28,8 @@ function resCompileError(error) {
 export function compileToCss(variables) {
     return function(dispatch) {
         dispatch(reqCompile(variables));
-        return axios.get(`https://webinjaz.herokuapp.com/compile`, {
-        // axios.get('http://localhost:3001/compile', {
+        return axios.get(`https://webinjaz.herokuapp.com/api/compile`, {
+        // axios.get('http://localhost:3001/api/compile', {
             params: variables
         })
         .then(res => {

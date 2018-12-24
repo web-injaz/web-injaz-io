@@ -17,9 +17,10 @@ class BuildTool extends Component
     constructor(props) {
         super(props);
         this.state = {
-            sass: ''
+            sass: '',
         }
     }
+
     submitHandler = values => {        
         this.props.sendVariables(values);
         this.setState({
