@@ -36,11 +36,9 @@ class BuildTool extends Component
         const Main = styled.div`${bg}`;
         return (
             <div className="bg-dark">
-                <Header />
+                <Header current="Build Tool" version="v0.0.1" />
                 <section className="build-tool-section">
                     <div className="container-fluid">
-                        <h2>Build Tool</h2>
-                        <hr/>
                         <div className="build-colors">
                             <BuildForm onSubmit={this.submitHandler} />
                         </div>

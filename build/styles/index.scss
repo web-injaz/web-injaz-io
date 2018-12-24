@@ -177,6 +177,13 @@ header {
             margin-left: 2rem;
         }
     }
+    .current {
+        vertical-align: middle;
+        margin-left: 1rem;
+    }
+    small {
+        font-size: 60%;
+    }
 }
 
 .intro-section {
@@ -328,12 +335,6 @@ footer {
 }
 
 .build-tool-section {
-    padding: 2rem 0;
-    h2 {
-        text-align: center;
-        font-weight: 400;
-        margin-bottom: 2rem;
-    }
     .build-colors {
         form {
             .form-group {
@@ -362,18 +363,11 @@ footer {
 
 .build-colors, .build-result, .build-demo {
     .form-section {
-        padding: 2rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.05);
-        transition: .5s background-color ease;
-        &:hover {
-            background-color: rgba($bw-01, $bw-01, $bw-01, 0.1);
-            transition: .5s background-color ease;
-        }
+        padding: 1rem;
     }
     h4 {
         margin-bottom: 2rem;
-        font-weight: 300;
+        font-weight: 500;
     }
 }
 

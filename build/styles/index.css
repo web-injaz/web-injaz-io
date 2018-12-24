@@ -8844,6 +8844,11 @@ header {
     font-weight: 200; }
   header .nav-right a {
     margin-left: 2rem; }
+  header .current {
+    vertical-align: middle;
+    margin-left: 1rem; }
+  header small {
+    font-size: 60%; }
 
 .intro-section {
   text-align: center;
@@ -8949,38 +8954,26 @@ footer {
   .shaper-section .nav-link {
     cursor: pointer; }
 
-.build-tool-section {
-  padding: 2rem 0; }
-  .build-tool-section h2 {
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 2rem; }
-  .build-tool-section .build-colors form .form-group label, .build-tool-section .build-colors form .form-group input {
-    display: inline-block;
-    width: 10rem;
-    vertical-align: bottom; }
-  .build-tool-section .build-colors form .form-group input {
-    border-radius: 30px;
-    text-align: center; }
-  .build-tool-section .build-colors form .other-components {
-    margin-left: 1rem; }
-  .build-tool-section .build-colors form .custom-control-input {
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999999999; }
+.build-tool-section .build-colors form .form-group label, .build-tool-section .build-colors form .form-group input {
+  display: inline-block;
+  width: 10rem;
+  vertical-align: bottom; }
+.build-tool-section .build-colors form .form-group input {
+  border-radius: 30px;
+  text-align: center; }
+.build-tool-section .build-colors form .other-components {
+  margin-left: 1rem; }
+.build-tool-section .build-colors form .custom-control-input {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999; }
 
 .build-colors .form-section, .build-result .form-section, .build-demo .form-section {
-  padding: 2rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.05);
-  transition: .5s background-color ease; }
-  .build-colors .form-section:hover, .build-result .form-section:hover, .build-demo .form-section:hover {
-    background-color: rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.1);
-    transition: .5s background-color ease; }
+  padding: 1rem; }
 .build-colors h4, .build-result h4, .build-demo h4 {
   margin-bottom: 2rem;
-  font-weight: 300; }
+  font-weight: 500; }
 
 .build-demo .main-colors span {
   display: inline-block;

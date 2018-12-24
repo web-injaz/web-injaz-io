@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <Main>
         <div className={`App bg-dark`}>
-          <Header />
+          <Header current="Web injaz" version="v2.2.10" />
           <Intro />
           <About />
           <CreateBackground />
