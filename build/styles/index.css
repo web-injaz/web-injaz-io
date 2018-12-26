@@ -8703,6 +8703,9 @@ textarea.form-control {
     .dropdown .dropdown-menu .dropdown-item:hover {
       background-color: var(--contrast-10); }
 
+body {
+  overflow-x: hidden; }
+
 .hidden {
   display: none; }
 
@@ -8830,25 +8833,37 @@ svg {
     bottom: 30%;
     fill: var(--contrast-20); }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .5rem 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15);
-  background-color: var(--contrast-20); }
-  header img {
-    height: 50px; }
-  header a {
-    font-size: 1.5rem;
-    font-weight: 200; }
-  header .nav-right a {
-    margin-left: 2rem; }
-  header .current {
-    vertical-align: middle;
-    margin-left: 1rem; }
-  header small {
-    font-size: 60%; }
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 0.5rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15); }
+  .navbar .navbar-brand {
+    padding-top: .25rem;
+    padding-bottom: .25rem; }
+    .navbar .navbar-brand img {
+      width: 3rem; }
+    .navbar .navbar-brand .current {
+      vertical-align: middle;
+      text-transform: capitalize;
+      margin-left: .25rem;
+      color: var(--main);
+      font-weight: 500;
+      font-size: 1.2rem; }
+      .navbar .navbar-brand .current small {
+        font-size: .75rem;
+        font-weight: 500;
+        text-transform: lowercase; }
+  .navbar .navbar-toggler {
+    border-color: var(--gray-40);
+    background-color: var(--gray-40); }
+  .navbar .collapse .navbar-nav .nav-item .nav-link, .navbar .collapsing .navbar-nav .nav-item .nav-link {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-weight: 500;
+    text-align: center; }
+    .navbar .collapse .navbar-nav .nav-item .nav-link.active, .navbar .collapsing .navbar-nav .nav-item .nav-link.active {
+      background-color: #336;
+      color: var(--background); }
 
 .intro-section {
   text-align: center;
@@ -8921,6 +8936,11 @@ header {
 
 .build-result .css {
   height: 300px; }
+.build-result .lang {
+  background-color: #282c34;
+  padding: .25rem 1rem;
+  color: #abb2bf;
+  border-radius: .25rem .25rem 0 0; }
 
 .docs-section {
   padding: 4rem 0;
@@ -8934,12 +8954,12 @@ header {
     right: 0;
     left: 0;
     z-index: -1;
-    background: var(--contrast) linear-gradient(90deg, rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0), rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.1), rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0)); }
+    background: var(--contrast-10) linear-gradient(90deg, rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0), rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.1), rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0)); }
 
 footer {
   background-color: var(--contrast-20);
   color: var(--text);
-  font-weight: 100;
+  font-weight: 400;
   text-align: center;
   padding: .25rem 0; }
   footer img {
@@ -8954,13 +8974,37 @@ footer {
   .shaper-section .nav-link {
     cursor: pointer; }
 
+.form-section {
+  padding: .5rem 2rem; }
+  .form-section h4 {
+    margin-bottom: 1rem;
+    font-weight: 400; }
+    .form-section h4 strong {
+      font-weight: 300; }
+  @media (max-width: 767.98px) {
+    .form-section {
+      text-align: center; }
+      .form-section .custom-control {
+        text-align: left; } }
+
+.mini-section {
+  padding: 1rem;
+  background: linear-gradient(90deg, rgba(51, 51, 102, 0.2), rgba(51, 51, 102, 0.1), rgba(51, 51, 102, 0.2));
+  border-radius: .25rem; }
+
+.form-group:last-child {
+  margin-bottom: 0; }
+
 .build-tool-section .build-colors form .form-group label, .build-tool-section .build-colors form .form-group input {
   display: inline-block;
+  font-weight: 500;
   width: 10rem;
   vertical-align: bottom; }
 .build-tool-section .build-colors form .form-group input {
-  border-radius: 30px;
+  border-radius: .25rem;
   text-align: center; }
+  .build-tool-section .build-colors form .form-group input[type="color"] {
+    border: 0; }
 .build-tool-section .build-colors form .other-components {
   margin-left: 1rem; }
 .build-tool-section .build-colors form .custom-control-input {
@@ -8968,12 +9012,14 @@ footer {
   width: 100%;
   height: 100%;
   z-index: 99999999999; }
+.build-tool-section .build-colors form .show-more {
+  margin-top: 1rem; }
+.build-tool-section .build-colors form .btn {
+  border-radius: .25rem;
+  margin-right: 1rem; }
 
-.build-colors .form-section, .build-result .form-section, .build-demo .form-section {
-  padding: 1rem; }
-.build-colors h4, .build-result h4, .build-demo h4 {
-  margin-bottom: 2rem;
-  font-weight: 500; }
+.build-colors, .build-result, .build-demo {
+  padding-top: 1rem; }
 
 .build-demo .main-colors span {
   display: inline-block;
