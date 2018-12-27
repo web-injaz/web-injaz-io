@@ -62,13 +62,13 @@ class BuildForm extends Component {
                     <h4>Create background</h4>
                     <div className="mini-section">
                         <Field
-                            name="bgName"
+                            name="name"
                             type="text"
                             component={renderInput}
                             label="Background Name"
                         />
                         <Field
-                            name="bgColor"
+                            name="background"
                             type="color"
                             component={renderInput}
                             label="Background Color"
@@ -76,19 +76,19 @@ class BuildForm extends Component {
                         <div className="btn btn-primary show-more-btn" onClick={() => this.toggleBgMore()}>More options</div>
                         <div className={`show-more mini-section ${this.state.showMore ? '' : 'hidden'}`}>
                             <Field
-                                name="bgText"
+                                name="text"
                                 type="color"
                                 component={renderInput}
                                 label="Background Text"
                             />
                             <Field
-                                name="bgHeaders"
+                                name="headers"
                                 type="color"
                                 component={renderInput}
                                 label="Headers Color"
                             />
                             <Field
-                                name="bgLinks"
+                                name="links"
                                 type="color"
                                 component={renderInput}
                                 label="Links Color"
@@ -100,43 +100,43 @@ class BuildForm extends Component {
                     <h4>Control variables</h4>
                     <div className="mini-section">
                         <Field
-                            name="enableRoot"
+                            name="enable_default_root"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable default root"
                         />
                         <Field
-                            name="enableInverse"
+                            name="enable_inverse"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable inverse"
                         />
                         <Field
-                            name="enableContrast"
+                            name="enable_contrast"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable contrast"
                         />
                         <Field
-                            name="enableTrans"
+                            name="enable_trans"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable trans"
                         />
                         <Field
-                            name="enableGray"
+                            name="enable_gray"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable gray"
                         />
                         <Field
-                            name="enableDarken"
+                            name="enable_darken"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable darken"
                         />
                         <Field
-                            name="enableLighten"
+                            name="enable_lighten"
                             type="checkbox"
                             component={renderCheck}
                             label="Enable lighten"
@@ -352,45 +352,14 @@ export default reduxForm({
     initialValues: {
         primary: '#a3dbfa',
         secondary: '#bf99ea',
-        bgName: 'dark',
-        bgColor: '#343a40',
-        // bgText: '#cccccc',
-        // bgHeaders: '#fff000',
-        // bgLinks: '#ff00ff',
-        // components: 'all',
-        // enableRoot: true,
-        // enableInverse: true,
-        // enableContrast: true,
-        // enableTrans: true,
-        // enableGray: true,
-        // enableDarken: false,
-        // enableLighten: false,
-        // select2: false,
-        // headerSection: false,
-        // panel: false,
-        // datepicker: false,
-        // navbar: false,
-        // carousel: false,
-        // alert: false,
-        // badge: false,
-        // breadcrumb: false,
-        // buttonGroup: false,
-        // buttons: false,
-        // card: false,
-        // code: false,
-        // customForms: false,
-        // forms: false,
-        // dropdown: false,
-        // inputGroup: false,
-        // jumbotron: false,
-        // listGroup: false,
-        // media: false,
-        // modal: false,
-        // nav: false,
-        // pagination: false,
-        // popover: false,
-        // progress: false,
-        // tables: false,
-        // tooltip: false,
+        name: 'dark',
+        background: '#343a40',
+        enable_default_root: true,
+        enable_inverse: true,
+        enable_contrast: true,
+        enable_trans: true,
+        enable_gray: true,
+        enable_darken: false,
+        enable_lighten: false,
     }
 })(connect(mapStateToProps)(BuildForm));

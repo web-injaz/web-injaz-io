@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     const params = req.query;
 
     let sassData = SassGenerator(params);
-        
+    
     Sass.render({
         data: sassData,
         includePaths: [

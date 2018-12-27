@@ -27,6 +27,7 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.1.2",
     "superagent": "^4.0.0",
+    "validator": "^10.10.0",
     "wi-framework": "^2.2.10",
     "wi-theme-famous": "^1.0.9"
   },
@@ -56,5 +57,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/web-injaz/web-injaz-io/issues"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

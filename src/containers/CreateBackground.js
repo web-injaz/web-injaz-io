@@ -13,12 +13,12 @@ class CreateBackground extends Component {
         this.state = {
             variables: {
                 primary: '#eeeeee',
-                bgColor: '#343a40'
+                background: '#343a40'
             }
         }
     }
 
-    handleSubmit = () => {        
+    handleSubmit = () => {
         this.props.onFormSubmit(this.state.variables);
     }
 

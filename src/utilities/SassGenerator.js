@@ -1,16 +1,5 @@
 const isEmpty = require('./isEmpty');
-
-function createBackground(vars) {  
-    let map = '';
-    if (!isEmpty(vars.bgText) || !isEmpty(vars.bgHeaders) || !isEmpty(vars.bgLinks)) {
-        map += ',(';
-        map += !isEmpty(vars.bgText) ? "'text': " + vars.bgText + ",": '';
-        map += !isEmpty(vars.bgHeaders) ? "'headers': " + vars.bgHeaders + ",": '';
-        map += !isEmpty(vars.bgLinks) ? "'links': " + vars.bgLinks : '';
-        map += ')';
-    }
-    return `@include create-background('${vars.bgName}', ${vars.bgColor}${map});`;
-}
+const backgroundGenerator = require('./backgroundGenerator');
 
 function importBootstrap(check, name) {
     if (!isEmpty(check)) {
@@ -23,22 +12,6 @@ function importBootstrap(check, name) {
 function importComponents(check, name) {
     if (!isEmpty(check)) {
         return `@import 'node_modules/wi-framework/components/${name}';`;
-    } else {
-        return '';
-    }
-}
-
-function controlVariables(name, value) {
-    if (!isEmpty(value)) {
-        return `$enable-${name}: ${value};`;
-    } else {
-        return '';
-    }
-}
-
-function defineVariable(name, value) {
-    if (!isEmpty(value)) {
-        return `$${name}: ${value};`;
     } else {
         return '';
     }
@@ -83,17 +56,7 @@ function componentsCheck(variables) {
 
 module.exports = function SassGenerator(variables) {    
     return (
-        defineVariable('primary', variables.primary) +
-        defineVariable('secondary', variables.secondary) +
-        controlVariables('default-root' , variables.enableRoot) +
-        controlVariables('inverse' , variables.enableInverse) +
-        controlVariables('darken' , variables.enableDarken) +
-        controlVariables('lighten' , variables.enableLighten) +
-        controlVariables('contrast' , variables.enableContrast) +
-        controlVariables('trans' , variables.enableTrans) +
-        controlVariables('gray' , variables.enableGray) +
-        `@import 'node_modules/wi-framework/index';`.trim() +
-        createBackground(variables) +
+        backgroundGenerator(variables, true) + 
         componentsCheck(variables)
     );
 }

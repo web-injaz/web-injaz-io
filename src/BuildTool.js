@@ -32,6 +32,7 @@ class BuildTool extends Component
         var css = this.props.css ? this.props.css : '';
         var half = css.slice(css.indexOf('.bg-'), css.length);
         var bg = half.slice(0, half.indexOf('}') + 1);
+        console.log(bg);
         
         const Main = styled.div`${bg}`;
         return (
@@ -66,21 +67,21 @@ class BuildTool extends Component
                         </div>
                     </div>
                     <Main className={`build-demo ${this.props.variables ? '' : 'hidden'}`}>
-                        <div className={`bg-${this.props.variables ? this.props.variables.bgName : ''}`}>
+                        <div className={`bg-${this.props.variables ? this.props.variables.name : ''}`}>
                             <div className="form-section">
-                                <h4>Preview "<strong>{this.props.variables && this.props.variables.bgName}</strong>"</h4>
+                                <h4>Preview "<strong>{this.props.variables && this.props.variables.name}</strong>"</h4>
                                 <div className="main-colors">
                                     <span className="primary">primary</span>
                                     <span className="secondary">secondary</span>
                                     <span className="background">background</span>
                                 </div>
-                                {(this.props.variables && this.props.variables.enableInverse) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_inverse) && <div className="main-colors">
                                     <span className="light-inverse">light-inverse</span>
-                                    <span className="text-light-inverse">text-light-inverse</span>
+                                    {/* <span className="text-light-inverse">text-light-inverse</span> */}
                                     <span className="dark-inverse">dark-inverse</span>
-                                    <span className="text-dark-inverse">text-dark-inverse</span>
+                                    {/* <span className="text-dark-inverse">text-dark-inverse</span> */}
                                 </div>}
-                                {(this.props.variables && this.props.variables.enableContrast) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_contrast) && <div className="main-colors">
                                     <span className="contrast">contrast</span>
                                     <span className="contrast-10">contrast-10</span>
                                     <span className="contrast-20">contrast-20</span>
@@ -92,7 +93,7 @@ class BuildTool extends Component
                                     <span className="contrast-80">contrast-80</span>
                                     <span className="contrast-90">contrast-90</span>
                                 </div>}
-                                {(this.props.variables && this.props.variables.enableTrans) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_trans) && <div className="main-colors">
                                     <span className="trans-10">trans-10</span>
                                     <span className="trans-20">trans-20</span>
                                     <span className="trans-30">trans-30</span>
@@ -103,7 +104,7 @@ class BuildTool extends Component
                                     <span className="trans-80">trans-80</span>
                                     <span className="trans-90">trans-90</span>
                                 </div>}
-                                {(this.props.variables && this.props.variables.enableGray) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_gray) && <div className="main-colors">
                                     <span className="gray-10">gray-10</span>
                                     <span className="gray-20">gray-20</span>
                                     <span className="gray-30">gray-30</span>
@@ -114,7 +115,7 @@ class BuildTool extends Component
                                     <span className="gray-80">gray-80</span>
                                     <span className="gray-90">gray-90</span>
                                 </div>}
-                                {(this.props.variables && this.props.variables.enableDarken) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_darken) && <div className="main-colors">
                                     <span className="darken-10">darken-10</span>
                                     <span className="darken-20">darken-20</span>
                                     <span className="darken-30">darken-30</span>
@@ -125,7 +126,7 @@ class BuildTool extends Component
                                     <span className="darken-80">darken-80</span>
                                     <span className="darken-90">darken-90</span>
                                 </div>}
-                                {(this.props.variables && this.props.variables.enableLighten) && <div className="main-colors">
+                                {(this.props.variables && this.props.variables.enable_lighten) && <div className="main-colors">
                                     <span className="lighten-10">lighten-10</span>
                                     <span className="lighten-20">lighten-20</span>
                                     <span className="lighten-30">lighten-30</span>

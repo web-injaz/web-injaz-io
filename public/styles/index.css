@@ -8864,6 +8864,9 @@ svg {
     .navbar .collapse .navbar-nav .nav-item .nav-link.active, .navbar .collapsing .navbar-nav .nav-item .nav-link.active {
       background-color: #336;
       color: var(--background); }
+  @media (max-width: 767.98px) {
+    .navbar {
+      box-shadow: 0 0.2rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.05); } }
 
 .intro-section {
   text-align: center;

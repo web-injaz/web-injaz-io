@@ -1,19 +1,11 @@
 const Sass = require('node-sass');
+const backgroundGenerator = require('../../src/utilities/backgroundGenerator');
 
 module.exports = (req, res) => {
     const params = req.query;
-        
-    const sassData = `
-        $primary: ${params.primary};
-        $color: ${params.bgColor};
-        $enable-default-root: false;
-        @import "wi-framework/variables/index";
-        @import "wi-framework/colors/index";
-        $name: 'dark' !default;
-        $color: #343a40 !default;
-        @include create-background($name, $color);
-    `;
-
+    
+    const sassData = backgroundGenerator(params, false);
+    
     var result = Sass.renderSync({
         data: sassData,
         includePaths: [
