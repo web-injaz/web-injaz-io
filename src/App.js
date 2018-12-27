@@ -14,7 +14,7 @@ import styled from 'styled-components';
 
 class App extends Component {
   render() {    
-    const Main = styled.div`${this.props.demo}`;
+    const Main = styled.div`${this.props.demo ? this.props.demo.css : ''}`;
     return (
       <Main>
         <div className={`App bg-dark`}>

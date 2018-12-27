@@ -25,14 +25,21 @@ function resShapesError(err) {
  
 export function getShapesList() {
     return function(dispatch) {
+        const shapes = [
+            'navbar',
+            'carousel',
+            'card'
+        ];
         dispatch(reqShapes());
-        axios.get(`https://webinjaz.herokuapp.com/api/shapes`)
-        // axios.get(`http://localhost:3001/api/shapes`)
-            .then(res => {
-                dispatch(resShapes(res.data));
-            },
-            err => {
-                dispatch(resShapesError(err));
-            });
+        // axios.get(`https://webinjaz.herokuapp.com/api/shapes`)
+        axios.get(`http://localhost:3001/api/shapes`, {
+            params: shapes
+        })
+        .then(res => {
+            dispatch(resShapes(res.data));
+        },
+        err => {
+            dispatch(resShapesError(err));
+        });
     }
 }

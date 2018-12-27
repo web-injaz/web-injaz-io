@@ -32,7 +32,6 @@ class BuildTool extends Component
         var css = this.props.css ? this.props.css : '';
         var half = css.slice(css.indexOf('.bg-'), css.length);
         var bg = half.slice(0, half.indexOf('}') + 1);
-        console.log(bg);
         
         const Main = styled.div`${bg}`;
         return (

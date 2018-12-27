@@ -29,5 +29,25 @@ module.exports = [
                 name: 'zlatan'
             }
         ]
-    }
+    },
+    // {
+    //     name: 'card',
+    //     shapes: [
+    //         {
+    //             name: 'iniesta'
+    //         },
+    //         {
+    //             name: 'messi'
+    //         },
+    //         {
+    //             name: 'robert'
+    //         },
+    //         {
+    //             name: 'roni'
+    //         },
+    //         {
+    //             name: 'zlatan'
+    //         }
+    //     ]
+    // }
 ];

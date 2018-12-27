@@ -28,8 +28,8 @@ function resError(error) {
 export function changeBackground(variables) {    
     return function(dispatch) {
         dispatch(reqCss(variables));
-        return axios.get(`https://webinjaz.herokuapp.com/api/demo`, {
-        // return axios.get(`http://localhost:3001/api/demo`, {
+        // return axios.get(`https://webinjaz.herokuapp.com/api/demo`, {
+        return axios.get(`http://localhost:3001/api/demo`, {
             params: variables
         }).then(res => {            
             if (res.status === 200) {                

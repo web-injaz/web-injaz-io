@@ -55,12 +55,12 @@ class CreateBackground extends Component {
                         <MDBCol md="12">
                             <Form className="needs-validation" submite={this.handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="colorName">Primary color</label>
+                                    <label htmlFor="primary">Primary color</label>
                                     <input 
                                         name="primary" 
                                         type="color"
                                         className="form-control required" 
-                                        id="colorName" 
+                                        id="primary" 
                                         placeholder="Primary color"
                                         value={this.state.variables.primary} 
                                         onChange={this.handleChange}
@@ -71,12 +71,12 @@ class CreateBackground extends Component {
                                 <div className="form-group">
                                     <label htmlFor="colorValue">Background color</label>
                                     <input 
-                                        name="bgColor" 
+                                        name="background" 
                                         type="color"
                                         className="form-control required" 
                                         id="colorValue" 
                                         placeholder="Background color"
-                                        value={this.state.variables.bgColor} 
+                                        value={this.state.variables.background} 
                                         onChange={this.handleChange}
                                         required
                                         />

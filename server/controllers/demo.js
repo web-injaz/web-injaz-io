@@ -21,7 +21,10 @@ module.exports = (req, res) => {
         }
     });
     
-    res.writeHead(200, {'Content-Type': 'text/css'});
-    res.write(result.css);
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.write(JSON.stringify({
+        css: Buffer(result.css).toString(),
+        sass: sassData
+    }));
     res.end();
 }

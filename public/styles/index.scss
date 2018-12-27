@@ -205,7 +205,7 @@ svg {
         }
     }
     @include media-breakpoint-down(sm) {
-        box-shadow: 0 0.2rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.05);
+        box-shadow: 0 0.2rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02);
     }
 }
 
