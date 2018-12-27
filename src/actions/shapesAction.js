@@ -31,8 +31,8 @@ export function getShapesList() {
             'card'
         ];
         dispatch(reqShapes());
-        // axios.get(`https://webinjaz.herokuapp.com/api/shapes`)
-        axios.get(`http://localhost:3001/api/shapes`, {
+        axios.get(`https://webinjaz.herokuapp.com/api/shapes`, {
+        // axios.get(`http://localhost:3001/api/shapes`, {
             params: shapes
         })
         .then(res => {
