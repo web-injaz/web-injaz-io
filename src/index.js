@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import App from './App';
-import BuildTool from './BuildTool';
+import BuildTools from './components/BuildTools';
+import Styler from './containers/Styler';
+import Shaper from './containers/Shaper';
+import Credits from './components/Credits';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -21,8 +24,11 @@ ReactDOM.render((
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route exact path="/build" component={BuildTool} />
-                <Route exact path="/*" render={() => <Redirect to="/" />} />
+                <Route exact path="/build" component={BuildTools} />
+                <Route exact path="/build/styler" component={Styler} />
+                <Route exact path="/build/shaper" component={Shaper} />
+                <Route exact path="/credits" component={Credits} />
+                <Route exact path="*" render={() => <Redirect to="/" />} />
             </Switch>
         </BrowserRouter>
     </Provider>

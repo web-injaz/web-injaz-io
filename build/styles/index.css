@@ -8740,6 +8740,10 @@ h3 {
 strong {
   font-weight: 600; }
 
+.content {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
 @keyframes little {
   0%, 100% {
     transform: scale(0.9); }
@@ -8866,7 +8870,7 @@ svg {
       color: var(--background); }
   @media (max-width: 767.98px) {
     .navbar {
-      box-shadow: 0 0.2rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02); } }
+      box-shadow: 0 0.2rem 0.5rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02); } }
 
 .intro-section {
   text-align: center;
@@ -9142,5 +9146,22 @@ footer {
   .build-demo .main-colors span:hover {
     transform: scale(1.05);
     transition: .5s transform ease-in-out; }
+
+.build-tools-picker .styler .jumbotron, .build-tools-picker .shaper .jumbotron {
+  text-align: center;
+  background: linear-gradient(-45deg, rgba(51, 51, 102, 0.3), rgba(51, 51, 102, 0.1));
+  background-size: 200% 200%;
+  background-position: 0% 200%;
+  transition: 1s ease background-position; }
+  .build-tools-picker .styler .jumbotron img, .build-tools-picker .shaper .jumbotron img {
+    width: 50%; }
+  .build-tools-picker .styler .jumbotron p, .build-tools-picker .styler .jumbotron h3, .build-tools-picker .shaper .jumbotron p, .build-tools-picker .shaper .jumbotron h3 {
+    font-weight: 500; }
+.build-tools-picker .styler:hover .jumbotron, .build-tools-picker .shaper:hover .jumbotron {
+  background-position: 200% 0%;
+  transition: 1s ease background-position; }
+@media (min-width: 768px) {
+  .build-tools-picker .styler .jumbotron, .build-tools-picker .shaper .jumbotron {
+    margin-bottom: 0; } }
 
 /*# sourceMappingURL=index.css.map */

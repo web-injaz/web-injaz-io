@@ -50,6 +50,11 @@ strong {
     font-weight: 600;
 }
 
+.content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
 @keyframes little {
     0%, 100% {
         transform: scale(.9);
@@ -205,7 +210,7 @@ svg {
         }
     }
     @include media-breakpoint-down(sm) {
-        box-shadow: 0 0.2rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02);
+        box-shadow: 0 0.2rem .5rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.02);
     }
 }
 
@@ -499,6 +504,37 @@ footer {
             &:hover {
                 transform: scale(1.05);
                 transition: .5s transform ease-in-out;
+            }
+        }
+    }
+}
+
+.build-tools-picker {
+    .styler, .shaper {
+        .jumbotron {
+            text-align: center;
+            background: linear-gradient(-45deg, rgba($primary, .3), rgba($primary, .1));
+            background-size: 200% 200%;
+            background-position: 0% 200%;
+            transition: 1s ease background-position;
+            img {
+                width: 50%;
+            }
+            p, h3 {
+                font-weight: 500;
+            }
+        }
+        @include hover {
+            .jumbotron {
+                background-position: 200% 0%;
+                transition: 1s ease background-position;
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .styler, .shaper {
+            .jumbotron {
+                margin-bottom: 0;
             }
         }
     }

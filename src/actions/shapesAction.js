@@ -23,13 +23,8 @@ function resShapesError(err) {
     }
 }
  
-export function getShapesList() {
+export function getShapesList(shapes) {
     return function(dispatch) {
-        const shapes = [
-            'navbar',
-            'carousel',
-            'card'
-        ];
         dispatch(reqShapes());
         axios.get(`https://webinjaz.herokuapp.com/api/shapes`, {
         // axios.get(`http://localhost:3001/api/shapes`, {

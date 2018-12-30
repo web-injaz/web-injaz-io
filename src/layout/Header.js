@@ -19,7 +19,7 @@ class Header extends React.Component {
             <Navbar light expand="sm">
                 <Link to="/">
                     <NavbarBrand>
-                        <img src="images/logo.png" alt="webinjaz io"/>
+                        <img src="/images/logo.png" alt="webinjaz io"/>
                         <span className="current">{this.props.current && this.props.current} <small>{this.props.version && this.props.version}</small></span>
                     </NavbarBrand>
                 </Link>
@@ -27,7 +27,7 @@ class Header extends React.Component {
                 <Collapse id="NC" isOpen={this.state.isOpen} navbar>
                     <NavbarNav right>
                         <NavItem>
-                            <NavLink to="/build">Build Tool</NavLink>
+                            <NavLink to="/build">Build Tools</NavLink>
                         </NavItem>
                         <NavItem>
                             <a className="nav-link" href="https://webinjaz.gitbook.io/framework/guide/api">API</a>

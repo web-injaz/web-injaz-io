@@ -7,8 +7,8 @@ import Intro from './components/Intro';
 import Docs from './components/Docs';
 import About from './components/About';
 
-import Shaper from './containers/Shaper';
-import CreateBackground from './containers/CreateBackground';
+import MiniShaper from './containers/MiniShaper';
+import MiniStyler from './containers/MiniStyler';
 
 import styled from 'styled-components';
 
@@ -21,8 +21,8 @@ class App extends Component {
           <Header current="Web injaz" version="v2.2.10" />
           <Intro />
           <About />
-          <CreateBackground />
-          <Shaper />
+          <MiniStyler />
+          <MiniShaper />
           <Docs />
           <Footer />
         </div>
