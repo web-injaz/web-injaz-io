@@ -37,7 +37,7 @@ class Styler extends Component
         const Main = styled.div`${bg}`;
         return (            
             <div className="bg-dark">
-                <Header current="Styler" version="v1.0.0(beta)" />
+                <Header image="webinjaz-styler.png" current="Styler" version="v1.0.0(beta)" />
                 <section className="build-tool-section">
                     <div className="build-colors">
                         <StylerForm onSubmit={this.submitHandler} />

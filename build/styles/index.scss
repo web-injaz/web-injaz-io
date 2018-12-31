@@ -366,13 +366,44 @@ footer {
 }
 
 .form-section {
-    padding: .5rem 2rem;
+    padding: .5rem 2rem;   
     h4 {
         margin-bottom: 1rem;
         font-weight: 400;
         strong {
             font-weight: 300;
         }
+    }
+    .form-group {
+        label, input {
+            display: inline-block;
+            font-weight: 500;
+            width: 10rem;
+            vertical-align: bottom;
+        }
+        input {
+            border-radius: .25rem;
+            text-align: center;
+            &[type="color"] {
+                border: 0;
+            }
+        }
+    }
+    .other-components {
+        margin-left: 1rem;
+    }
+    .custom-control-input {
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999999999;
+    }
+    .show-more {
+        margin-top: 1rem;
+    }
+    .btn {
+        border-radius: .25rem;
+        margin-right: 1rem;
     }
     @include media-breakpoint-down(sm) {
         text-align: center;
@@ -385,52 +416,14 @@ footer {
 .mini-section {
     padding: 1rem;
     background: linear-gradient(90deg, 
-                rgba($primary, .2),
                 rgba($primary, .1),
-                rgba($primary, .2));
+                rgba($primary, .15),
+                rgba($primary, .1));
     border-radius: .25rem;
 }
 
 .form-group:last-child {
     margin-bottom: 0;
-}
-
-.build-tool-section {
-    .build-colors {
-        form {
-            .form-group {
-                label, input {
-                    display: inline-block;
-                    font-weight: 500;
-                    width: 10rem;
-                    vertical-align: bottom;
-                }
-                input {
-                    border-radius: .25rem;
-                    text-align: center;
-                    &[type="color"] {
-                        border: 0;
-                    }
-                }
-            }
-            .other-components {
-                margin-left: 1rem;
-            }
-            .custom-control-input {
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 99999999999;
-            }
-            .show-more {
-                margin-top: 1rem;
-            }
-            .btn {
-                border-radius: .25rem;
-                margin-right: 1rem;
-            }
-        }
-    }
 }
 
 .build-colors, .build-result, .build-demo {
@@ -439,10 +432,13 @@ footer {
 
 .build-demo {
     .main-colors {
+        display: flex;
+        flex-flow: row wrap;
         span {
-            display: inline-block;
+            // display: inline-block;
+            flex: 1 35%;
             overflow: hidden;
-            width: 120px;
+            // width: 120px;
             height: 120px;
             line-height: 120px;
             text-align: center;

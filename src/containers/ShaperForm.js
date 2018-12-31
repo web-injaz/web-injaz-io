@@ -14,6 +14,16 @@ const renderInput = ({input, label, type, meta: { touched, error }}) => {
     )
 }
 
+const renderTextarea = ({input, label, meta: { touched, error }}) => {
+    return (
+        <div className="form-group">
+            <label htmlFor={input.name}>{label}</label>
+            <textarea {...input} className="form-control" placeholder={label} />
+            { touched && error && <span className="help-block">{error}</span>}
+        </div>
+    )
+}
+
 // const renderCheck = ({input, label, type, meta: { touched, error }}) => {    
 //     return (
 //         <div className={`custom-control custom-${type}`}>
@@ -46,6 +56,21 @@ class ShaperForm extends Component
                                 type="text"
                                 component={renderInput}
                                 label="Component name"
+                            />
+                        </div>
+                    </div>
+                    <div className="form-section">
+                        <h4>Add your style</h4>
+                        <div className="mini-section">
+                            <Field
+                                name="style_sass"
+                                component={renderTextarea}
+                                label="Sass"
+                            />
+                            <Field
+                                name="style_css"
+                                component={renderTextarea}
+                                label="Css"
                             />
                         </div>
                     </div>

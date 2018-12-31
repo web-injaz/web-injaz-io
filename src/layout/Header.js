@@ -19,7 +19,7 @@ class Header extends React.Component {
             <Navbar light expand="sm">
                 <Link to="/">
                     <NavbarBrand>
-                        <img src="/images/logo.png" alt="webinjaz io"/>
+                        <img src={`/images/${this.props.image ? this.props.image : 'logo.png'}`} alt="webinjaz io"/>
                         <span className="current">{this.props.current && this.props.current} <small>{this.props.version && this.props.version}</small></span>
                     </NavbarBrand>
                 </Link>
