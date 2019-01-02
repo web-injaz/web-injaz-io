@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Carousel = shapeName => (
-    <div id={shapeName} className={"carousel slide sh-carousel-" + shapeName} data-ride="carousel">
+    <div id={shapeName} className={`carousel slide sh-carousel-${shapeName}`} data-ride="carousel">
         <ol className="carousel-indicators">
             <li data-target={"#" + shapeName} data-slide-to="0" className="active"></li>
             <li data-target={"#" + shapeName} data-slide-to="1"></li>
@@ -42,7 +42,7 @@ const Carousel = shapeName => (
 );
 
 const Navbar = shapeName => (
-    <nav className={"navbar navbar-expand-lg navbar-light bg-light sh-navbar-" + shapeName}>
+    <nav className={`navbar navbar-expand-lg navbar-light bg-light sh-navbar-${shapeName}`}>
         <a className="navbar-brand" href={"#" + shapeName}>Navbar</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -469,8 +469,10 @@ const Components = props =>
         'jumbotron': Jumbotron(props.shape),
         'dropdown': Dropdown(props.shape)
     }
-
-    return (props.component ? compsList[props.component] : null);
+    
+    return (props.component ? (
+        compsList[props.component] ? (compsList[props.component]) : <h4>Sorry, Component {props.component} unavailable</h4>
+        ) : null);
 }
 
 export default Components;

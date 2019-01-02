@@ -375,13 +375,13 @@ footer {
         }
     }
     .form-group {
-        label, input {
+        label, input, select {
             display: inline-block;
             font-weight: 500;
             width: 10rem;
             vertical-align: bottom;
         }
-        input {
+        input, select {
             border-radius: .25rem;
             text-align: center;
             &[type="color"] {

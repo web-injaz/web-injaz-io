@@ -2,7 +2,7 @@
 
 const cors = require('cors');
 const express = require('express');
-// const mongoose = require('mongoose');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 
@@ -10,11 +10,20 @@ const app = express();
 var path = require('path');
 
 // env variables
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 // const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/webinjaz-io';
 
-// mongoose.Promise = Promise;
-// mongoose.connect(MONGODB_URI);
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: ''
+});
+
+db.connect(function(err) {    
+    if(err) throw err;
+    console.log('Connected!'); 
+});
+
 app.use(compression());
 app.use(bodyParser.json(), cors());
 
@@ -32,7 +41,7 @@ app.all('/', function(req, res) {
 });
 
 app.all('*', (req, res) => {
-    return res.sendStatus(404);
+    window.location.href = '/';
 });
 
 // app.use(require('../middlewares/errorHandler'));

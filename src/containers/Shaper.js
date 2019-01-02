@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import ShaperForm from './ShaperForm';
-import Components from '../components/Components';
 
 class Shaper extends Component
 {
@@ -10,15 +9,21 @@ class Shaper extends Component
         super(props);
         this.state = {
             compPreview: '',
-            shapePreview: ''
+            shapePreview: '',
+            codepen: null
         }
     }
 
-    submitHandler = values => {
-        console.log(values);
+    submitHandler = values => {        
+        const codepen = (
+                <iframe height='350' scrolling='no' title='Empty' src={`${values.codepen}/?height=265&theme-id=0&default-tab=css,result`} frameBorder='no' allowFullScreen style={{width: '100%'}}>
+                Perview not available
+                </iframe>
+        );
         this.setState({
             compPreview: values.component_name,
-            shapePreview: values.shape_name
+            shapePreview: values.shape_name,
+            codepen
         });
     }
 
@@ -27,7 +32,10 @@ class Shaper extends Component
             <div className="shaper">
                 <Header image="webinjaz-shaper.png" current="Shaper" version="v0.0.1(beta)" />
                 <ShaperForm onSubmit={this.submitHandler} />
-                <Components component={this.state.compPreview} shape={this.state.shapePreview} />
+                    {/* <Components component={this.state.compPreview} shape={this.state.shapePreview} /> */}
+                    <div className="container">
+                        {this.state.codepen}
+                    </div>
                 <Footer />
             </div>
         )

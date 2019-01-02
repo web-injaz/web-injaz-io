@@ -3,26 +3,18 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import validate from '../utilities/validate';
 import { connect } from 'react-redux';
+import { getShapesList } from '../actions/shapesAction';
 
-const renderInput = ({input, label, type, meta: { touched, error }}) => {
-    return (
-        <div className="form-group">
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} className="form-control" type={type} placeholder={label} />
-            { touched && error && <span className="help-block">{error}</span>}
-        </div>
-    )
-}
 
-const renderTextarea = ({input, label, meta: { touched, error }}) => {
-    return (
-        <div className="form-group">
-            <label htmlFor={input.name}>{label}</label>
-            <textarea {...input} className="form-control" placeholder={label} />
-            { touched && error && <span className="help-block">{error}</span>}
-        </div>
-    )
-}
+// const renderTextarea = ({input, label, meta: { touched, error }}) => {
+//     return (
+//         <div className="form-group">
+//             <label htmlFor={input.name}>{label}</label>
+//             <textarea {...input} className="form-control" placeholder={label} />
+//             { touched && error && <span className="help-block">{error}</span>}
+//         </div>
+//     )
+// }
 
 // const renderCheck = ({input, label, type, meta: { touched, error }}) => {    
 //     return (
@@ -36,6 +28,33 @@ const renderTextarea = ({input, label, meta: { touched, error }}) => {
 
 class ShaperForm extends Component
 {
+
+    componentDidMount() {
+        this.props.getShapesList([]);
+    }
+
+    renderInput = ({input, label, type, meta: { touched, error }}) => {
+        return (
+            <div className="form-group">
+                <label htmlFor={input.name}>{label}</label>
+                <input {...input} className="form-control" type={type} placeholder={label} />
+                { touched && error && <span className="help-block">{error}</span>}
+            </div>
+        )
+    }
+
+    renderSelect = ({input, label, type, meta: { touched, error }}) => {
+        return (
+            <div className="form-group">
+                <label htmlFor={input.name}>{label}</label>
+                <select {...input} className="form-control" placeholder={label} >
+                    {this.props.shapesList && this.props.shapesList.map(option => <option key={option.name}>{option.name}</option>)}
+                </select>
+                { touched && error && <span className="help-block">{error}</span>}
+            </div>
+        )
+    }
+
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
 
@@ -48,13 +67,13 @@ class ShaperForm extends Component
                             <Field
                                 name="shape_name"
                                 type="text"
-                                component={renderInput}
+                                component={this.renderInput}
                                 label="Shape name"
                             />
                             <Field
                                 name="component_name"
                                 type="text"
-                                component={renderInput}
+                                component={this.renderSelect}
                                 label="Component name"
                             />
                         </div>
@@ -63,15 +82,11 @@ class ShaperForm extends Component
                         <h4>Add your style</h4>
                         <div className="mini-section">
                             <Field
-                                name="style_sass"
-                                component={renderTextarea}
-                                label="Sass"
+                                name="codepen"
+                                component={this.renderInput}
+                                label="Your Codepen Pen"
                             />
-                            <Field
-                                name="style_css"
-                                component={renderTextarea}
-                                label="Css"
-                            />
+                            <span className="text-muted">ex: https://codepen.io/karlovidek/embed/wQerbR</span>
                         </div>
                     </div>
                     <div className="form-section">
@@ -88,13 +103,18 @@ class ShaperForm extends Component
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    getShapesList: (shapes) => dispatch(getShapesList(shapes))
+})
+
 const mapStateToProps = state => {    
     return {
-        form: state.form.shaperForm
+        form: state.form.shaperForm,
+        shapesList: state.shapes.shapesList
     }
 }
 
 export default reduxForm({
     form: 'shaperForm',
     validate
-})(connect(mapStateToProps)(ShaperForm));
+})(connect(mapStateToProps, mapDispatchToProps)(ShaperForm));

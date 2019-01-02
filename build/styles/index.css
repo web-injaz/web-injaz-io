@@ -8988,15 +8988,15 @@ footer {
     font-weight: 400; }
     .form-section h4 strong {
       font-weight: 300; }
-  .form-section .form-group label, .form-section .form-group input {
+  .form-section .form-group label, .form-section .form-group input, .form-section .form-group select {
     display: inline-block;
     font-weight: 500;
     width: 10rem;
     vertical-align: bottom; }
-  .form-section .form-group input {
+  .form-section .form-group input, .form-section .form-group select {
     border-radius: .25rem;
     text-align: center; }
-    .form-section .form-group input[type="color"] {
+    .form-section .form-group input[type="color"], .form-section .form-group select[type="color"] {
       border: 0; }
   .form-section .other-components {
     margin-left: 1rem; }

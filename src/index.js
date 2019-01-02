@@ -7,6 +7,7 @@ import BuildTools from './components/BuildTools';
 import Styler from './containers/Styler';
 import Shaper from './containers/Shaper';
 import Credits from './components/Credits';
+import ErrorBoundary from './ErrorBoundary';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -21,16 +22,18 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render((
     <Provider store={store}>
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route exact path="/build" component={BuildTools} />
-                <Route exact path="/build/styler" component={Styler} />
-                <Route exact path="/build/shaper" component={Shaper} />
-                <Route exact path="/credits" component={Credits} />
-                <Route exact path="*" render={() => <Redirect to="/" />} />
-            </Switch>
-        </BrowserRouter>
+        <ErrorBoundary>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route exact path="/build" component={BuildTools} />
+                    <Route exact path="/build/styler" component={Styler} />
+                    <Route exact path="/build/shaper" component={Shaper} />
+                    <Route exact path="/credits" component={Credits} />
+                    <Route exact path="*" render={() => <Redirect to="/" />} />
+                </Switch>
+            </BrowserRouter>
+        </ErrorBoundary>
     </Provider>
 ), document.getElementById('root'));
 
