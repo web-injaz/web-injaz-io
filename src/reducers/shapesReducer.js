@@ -1,4 +1,5 @@
-import { REQ_SHAPES, RES_SHAPES, RES_SHAPES_ERROR } from '../actions/shapesAction';
+import { REQ_SHAPES, RES_SHAPES, RES_SHAPES_ERROR,
+         ADD_SHAPE, ADD_SHAPE_ERROR } from '../actions/shapesAction';
 
 const initialState = {
     shapesList: []
@@ -19,6 +20,16 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 error: action.error
+            }
+        case ADD_SHAPE:
+            return {
+                ...state,
+                addedShape: action.payload
+            }
+        case ADD_SHAPE_ERROR:
+            return {
+                ...state,
+                error: action.payload
             }
         default:
             return state;

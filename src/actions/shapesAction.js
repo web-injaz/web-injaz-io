@@ -38,3 +38,32 @@ export function getShapesList(shapes) {
         });
     }
 }
+
+export const ADD_SHAPE = 'ADD_SHAPE';
+export function addShapeAction(done) {
+    return {
+        type: ADD_SHAPE,
+        payload: done
+    }
+}
+
+export const ADD_SHAPE_ERROR = 'ADD_SHAPE_ERROR';
+export function addShapeErrorAction(error) {
+    return {
+        type: ADD_SHAPE,
+        payload: error
+    }
+}
+
+export function addShape(shape) {
+    return (dispatch) => {
+        axios.post(`http://localhost:5000/api/shapes`, {
+            body: shape
+        })
+        .then(
+            res => dispatch(addShapeAction(res.data)), 
+            err => dispatch(addShapeErrorAction(err))
+        )
+        .catch(err => dispatch(addShapeErrorAction(err)));
+    }
+}

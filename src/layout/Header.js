@@ -30,6 +30,9 @@ class Header extends React.Component {
                             <NavLink to="/build">Build Tools</NavLink>
                         </NavItem>
                         <NavItem>
+                            <NavLink to="/list">Shapes</NavLink>
+                        </NavItem>
+                        <NavItem>
                             <a className="nav-link" href="https://webinjaz.gitbook.io/framework/guide/api">API</a>
                         </NavItem>
                         <NavItem>

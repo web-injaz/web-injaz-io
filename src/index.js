@@ -8,6 +8,7 @@ import Styler from './containers/Styler';
 import Shaper from './containers/Shaper';
 import Credits from './components/Credits';
 import ErrorBoundary from './ErrorBoundary';
+import Admin from './containers/Admin';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -30,7 +31,8 @@ ReactDOM.render((
                     <Route exact path="/build/styler" component={Styler} />
                     <Route exact path="/build/shaper" component={Shaper} />
                     <Route exact path="/credits" component={Credits} />
-                    <Route exact path="*" render={() => <Redirect to="/" />} />
+                    <Route exact path="/list" component={Admin} />
+                    <Route path="*" render={() => <Redirect to="/" />} />
                 </Switch>
             </BrowserRouter>
         </ErrorBoundary>
