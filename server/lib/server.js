@@ -13,16 +13,16 @@ var path = require('path');
 const PORT = process.env.PORT || 5000;
 // const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/webinjaz-io';
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: ''
-});
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: ''
+// });
 
-db.connect(function(err) {    
-    if(err) throw err;
-    console.log('Connected!'); 
-});
+// db.connect(function(err) {    
+//     if(err) throw err;
+//     console.log('Connected!'); 
+// });
 
 app.use(compression());
 app.use(bodyParser.json(), cors());
