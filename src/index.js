@@ -8,7 +8,7 @@ import Styler from './containers/Styler';
 import Shaper from './containers/Shaper';
 import Credits from './components/Credits';
 import ErrorBoundary from './ErrorBoundary';
-import Admin from './containers/Admin';
+import Shapes from './containers/Shapes';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -18,6 +18,7 @@ import { createStore, applyMiddleware } from 'redux';
 // import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
+import User from './containers/User';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -31,7 +32,8 @@ ReactDOM.render((
                     <Route exact path="/build/styler" component={Styler} />
                     <Route exact path="/build/shaper" component={Shaper} />
                     <Route exact path="/credits" component={Credits} />
-                    <Route exact path="/list" component={Admin} />
+                    <Route exact path="/list" component={Shapes} />
+                    <Route exact path="/sign" component={User} />
                     <Route path="*" render={() => <Redirect to="/" />} />
                 </Switch>
             </BrowserRouter>

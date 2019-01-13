@@ -12,7 +12,7 @@ export default function(state = initialState, action) {
         case RES_COMPILE:
             return {
                 ...state,
-                css: action.css
+                result: action.result
             };
         case RES_COMPILE_ERROR:
             return {

@@ -10,10 +10,7 @@ class MiniShaper extends Component {
         this.state = {
             activeItem: 'navbar',
             activeShape: 'default',
-            shapes: [
-                'navbar',
-                'carousel'
-            ]
+            shapes: []
         }
     }
 
@@ -47,7 +44,7 @@ class MiniShaper extends Component {
                     <div className="classic-tabs">
                         <div className="nav nav-tabs nav-fill">
                             {
-                                this.props.shapesList && this.props.shapesList.map((comp, index) => {
+                                this.props.shapesList && this.props.shapesList.filter(item => item.name === 'navbar' || item.name === 'carousel').map((comp, index) => {
                                     return (
                                         <div className="nav-item" key={index}>
                                             <span 
@@ -78,10 +75,10 @@ class MiniShaper extends Component {
                                                         return (
                                                             <div className="nav-item" key={index}>
                                                                 <span 
-                                                                    className={`nav-link ${(this.state.activeShape === shape.name) && 'active'}`}
-                                                                    onClick={() => {this.toggleTabShape(shape.name)}}
+                                                                    className={`nav-link ${(this.state.activeShape === shape.shape) && 'active'}`}
+                                                                    onClick={() => {this.toggleTabShape(shape.shape)}}
                                                                 >
-                                                                    {shape.name}
+                                                                    {shape.shape}
                                                                 </span>
                                                             </div>
                                                         )
@@ -94,10 +91,10 @@ class MiniShaper extends Component {
                                                         return (
                                                             <div 
                                                                 key={index} 
-                                                                id={shape.name} 
-                                                                className={`tab-pane fade ${this.state.activeShape === shape.name && 'show active'}`}
+                                                                id={shape.shape} 
+                                                                className={`tab-pane fade ${this.state.activeShape === shape.shape && 'show active'}`}
                                                                 role="tabpanel" 
-                                                                aria-labelledby={`${shape.name}-tab`}
+                                                                aria-labelledby={`${shape.shape}-tab`}
                                                             >
                                                                 <Components component={comp.name} shape={this.state.activeShape} />
                                                             </div>

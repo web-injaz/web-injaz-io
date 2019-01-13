@@ -11,10 +11,10 @@ function reqCompile(variables) {
     }
 }
 
-function resCompile(css) {
+function resCompile(result) {
     return {
         type: RES_COMPILE,
-        css
+        result
     }
 }
 

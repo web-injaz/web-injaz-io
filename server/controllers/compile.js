@@ -1,11 +1,11 @@
 const Sass = require('node-sass');
-const SassGenerator = require('../../src/utilities/SassGenerator');
+const SassGenerator = require('./SassGenerator');
 
 module.exports = (req, res) => {
     const params = req.query;
 
     let sassData = SassGenerator(params);
-    
+
     Sass.render({
         data: sassData,
         includePaths: [
@@ -14,17 +14,13 @@ module.exports = (req, res) => {
             '../../'
         ]
     }, (err, result) => {
-        if (err) {
-            console.log(err);
-            
-            res.json({
-                message: err.message,
-                status: 209
-            });
-        } else {
-            res.writeHead(200, {'Content-Type': 'text/css'});
-            res.write(result.css);
-            res.end();
-        }
+        if (err) return res.json({
+            message: err.message,
+            status: 209
+        }).end();
+        res.json({
+            css: result.css.toString(),
+            sass: sassData
+        })
     });
 }

@@ -41,6 +41,9 @@ class Header extends React.Component {
                         <NavItem>
                             <a className="nav-link" href="https://webinjaz.gitbook.io/framework">Docs</a>
                         </NavItem>
+                        {/* <NavItem>
+                            <NavLink to="/sign">Join</NavLink>
+                        </NavItem> */}
                     </NavbarNav>
                 </Collapse>
             </Navbar>

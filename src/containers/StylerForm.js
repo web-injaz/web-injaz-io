@@ -162,173 +162,61 @@ class StylerForm extends Component {
                                 label="Choose components"
                             />
                             <div className={`other-components ${(this.props.form && this.props.form.values && this.props.form.values.components !== 'specific') ? 'hidden' : ''}`}>
-                                <Field
-                                    name="select2"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="select2"
-                                />
-                                <Field
-                                    name="datepicker"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="datepicker"
-                                />
-                                <Field
-                                    name="headerSection"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="header-section"
-                                />
-                                <Field
-                                    name="panel"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="panel"
-                                />
-                                <Field
-                                    name="navbar"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="navbar"
-                                />
-                                <Field
-                                    name="carousel"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="carousel"
-                                />
-                                <Field
-                                    name="alert"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="alert"
-                                />
-                                <Field
-                                    name="badge"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="badge"
-                                />
-                                <Field
-                                    name="breadcrumb"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="breadcrumb"
-                                />
-                                <Field
-                                    name="buttonGroup"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="button-group"
-                                />
-                                <Field
-                                    name="buttons"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="buttons"
-                                />
-                                <Field
-                                    name="card"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="card"
-                                />
-                                <Field
-                                    name="code"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="code"
-                                />
-                                <Field
-                                    name="customForms"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="custom-forms"
-                                />
-                                <Field
-                                    name="forms"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="forms"
-                                />
-                                <Field
-                                    name="dropdown"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="dropdown"
-                                />
-                                <Field
-                                    name="inputGroup"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="input-group"
-                                />
-                                <Field
-                                    name="jumbotron"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="jumbotron"
-                                />
-                                <Field
-                                    name="listGroup"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="list-group"
-                                />
-                                <Field
-                                    name="media"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="media"
-                                />
-                                <Field
-                                    name="modal"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="modal"
-                                />
-                                <Field
-                                    name="nav"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="nav"
-                                />
-                                <Field
-                                    name="pagination"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="pagination"
-                                />
-                                <Field
-                                    name="popover"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="popover"
-                                />
-                                <Field
-                                    name="progress"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="progress"
-                                />
-                                <Field
-                                    name="tables"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="tables"
-                                />
-                                <Field
-                                    name="tooltip"
-                                    type="checkbox"
-                                    component={renderCheck}
-                                    label="tooltip"
-                                />
+                                {
+                                    this.props.shapesList && this.props.shapesList.map(comp => {
+                                        return (
+                                            <Field
+                                                name={comp.name}
+                                                key={comp.name}
+                                                type="checkbox"
+                                                component={renderCheck}
+                                                label={comp.name}
+                                            />
+                                        )
+                                    })
+                                }
                         </div>
                     </div>
                 </div>
                 <div className="form-section">
-                    <button type="submit" className="btn btn-primary" disabled={pristine || submitting}>
+                    <h4>Import shapes</h4>
+                    <div className="mini-section">
+                            <Field
+                                name="shapes"
+                                value="all"
+                                type="radio"
+                                component={renderCheck}
+                                label="All shapes"
+                            />
+                            <Field
+                                name="shapes"
+                                defaultChecked={true}
+                                value="specific"
+                                type="radio"
+                                component={renderCheck}
+                                label="Choose shapes"
+                            />
+                            <div className={`other-components ${(this.props.form && this.props.form.values && this.props.form.values.shapes !== 'specific') ? 'hidden' : ''}`}>
+                                {
+                                    this.props.shapesList && this.props.shapesList.map(comp => {
+                                        return comp.shapes && comp.shapes.map(shape => {
+                                            return (
+                                                <Field
+                                                    name={shape.shape}
+                                                    key={shape.shape}
+                                                    type="checkbox"
+                                                    component={renderCheck}
+                                                    label={`${comp.name} - ${shape.shape}`}
+                                                />
+                                            )
+                                        })
+                                    })
+                                }
+                        </div>
+                    </div>
+                </div>
+                <div className="form-section">
+                    <button type="submit" className="btn btn-primary" disabled={submitting}>
                     Submit
                     </button>
                     <button type="button" className="btn btn-secondary" disabled={pristine || submitting} onClick={reset}>
@@ -342,7 +230,8 @@ class StylerForm extends Component {
 
 const mapStateToProps = state => {    
     return {
-        form: state.form.stylerForm
+        form: state.form.stylerForm,
+        shapesList: state.shapes.shapesList
     }
 }
 

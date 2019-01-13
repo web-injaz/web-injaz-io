@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import validate from '../utilities/validate';
 import { connect } from 'react-redux';
 import { getShapesList } from '../actions/shapesAction';
-
+import { Redirect } from 'react-router-dom';
 
 // const renderTextarea = ({input, label, meta: { touched, error }}) => {
 //     return (
@@ -56,8 +56,7 @@ class ShaperForm extends Component
     }
 
     render() {
-        const { handleSubmit, pristine, reset, submitting } = this.props;
-
+        const { handleSubmit, pristine, reset, submitting } = this.props;        
         return (
             <div className="shaper-form">
                 <form onSubmit={handleSubmit}>
@@ -65,17 +64,23 @@ class ShaperForm extends Component
                         <h4>Build a shape</h4>
                         <div className="mini-section">
                             <Field
-                                name="shape_name"
+                                name="name"
                                 type="text"
                                 component={this.renderInput}
                                 label="Shape name"
                             />
+                            {(this.props.res && 
+                            this.props.form && this.props.form.values && this.props.res.name === this.props.form.values.component) ? (<Redirect to="/list" />) :
+                            (this.props.res && this.props.res && this.props.res.name) &&
+                            <span className="text-danger">{this.props.res.name}</span>}
                             <Field
-                                name="component_name"
+                                name="component"
                                 type="text"
                                 component={this.renderSelect}
                                 label="Component name"
                             />
+                            {(this.props.res && this.props.res && this.props.res.component) &&
+                            <span className="text-danger">{this.props.res.component}</span>}
                         </div>
                     </div>
                     <div className="form-section">
@@ -86,7 +91,8 @@ class ShaperForm extends Component
                                 component={this.renderInput}
                                 label="Your Codepen Pen"
                             />
-                            <span className="text-muted">ex: https://codepen.io/karlovidek/embed/wQerbR</span>
+                            {(this.props.res && this.props.res && this.props.res.codepen) ?
+                            <span className="text-danger">{this.props.res.codepen}</span>: <span className="text-muted">ex: https://codepen.io/karlovidek/embed/wQerbR</span>}
                         </div>
                     </div>
                     <div className="form-section">
@@ -110,7 +116,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {    
     return {
         form: state.form.shaperForm,
-        shapesList: state.shapes.shapesList
+        shapesList: state.shapes.shapesList,
+        res: state.shapes.addedShape
     }
 }
 

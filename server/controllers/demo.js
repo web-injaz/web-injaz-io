@@ -1,5 +1,5 @@
 const Sass = require('node-sass');
-const backgroundGenerator = require('../../src/utilities/backgroundGenerator');
+const backgroundGenerator = require('./backgroundGenerator');
 
 module.exports = (req, res) => {
     const params = req.query;

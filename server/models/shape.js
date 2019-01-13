@@ -10,12 +10,11 @@ const ShapeSchema = mongoose.Schema({
         required: true
     },
     codepen: {
-        type: String,
-        required: true
+        type: String
     },
     status: {
         type: Boolean,
-        default: false 
+        default: false
     },
     date: {
         type: Date,

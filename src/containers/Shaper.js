@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import ShaperForm from './ShaperForm';
+import { addShape } from '../actions/shapesAction';
+import { connect } from 'react-redux';
 
 class Shaper extends Component
 {
@@ -14,12 +16,15 @@ class Shaper extends Component
         }
     }
 
-    submitHandler = values => {        
-        const codepen = (
+    submitHandler = values => {
+        this.props.addShape(values);
+
+        const codepen = values.codepen ? (
                 <iframe height='350' scrolling='no' title='Empty' src={`${values.codepen}/?height=265&theme-id=0&default-tab=css,result`} frameBorder='no' allowFullScreen style={{width: '100%'}}>
                 Perview not available
                 </iframe>
-        );
+        ) : null;
+        
         this.setState({
             compPreview: values.component_name,
             shapePreview: values.shape_name,
@@ -42,4 +47,8 @@ class Shaper extends Component
     }
 }
 
-export default Shaper;
+const mapDispatchToProps = dispatch => ({
+    addShape: data => dispatch(addShape(data))
+});
+
+export default connect(null, mapDispatchToProps)(Shaper);

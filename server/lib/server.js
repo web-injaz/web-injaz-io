@@ -4,6 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const passport = require('passport');
 
 const app = express();
 var path = require('path');
@@ -12,20 +13,24 @@ var path = require('path');
 const PORT = process.env.PORT || 5000;
 
 // Database
-
 const mongoose = require('mongoose');
 const db = require('./config').db;
 
-mongoose.connect(db, {useNewUrlParser: true});
+mongoose.connect(db, {useCreateIndex: true,useNewUrlParser: true}, err => {if(!err) console.log('MongoDB Connected')});
 
 app.use(compression());
 app.use(bodyParser.json(), cors());
 
-// Routes
+// Authentication
+app.use(passport.initialize());
+require('./auth/passport')(passport);
 
-const Demo = require('../route/demo');
-const Compile = require('../route/compile');
-const Shapes = require('../route/shapes');
+// Routes
+const Demo      = require('../route/demo');
+const Compile   = require('../route/compile');
+const Shapes    = require('../route/shapes');
+const User      = require('../route/user');
+app.use('/user', User);
 app.use('/api/demo', Demo);
 app.use('/api/compile', Compile);
 app.use('/api/shapes', Shapes);
@@ -39,7 +44,7 @@ app.all('/', function(req, res) {
 });
 
 app.all('*', (req, res) => {
-    window.location.href = '/';
+    res.redirect('/');
 });
 
 // app.use(require('../middlewares/errorHandler'));

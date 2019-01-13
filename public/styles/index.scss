@@ -170,8 +170,8 @@ svg {
     padding-bottom: 0;
     box-shadow: $box-shadow;
     .navbar-brand {
-        padding-top: .25rem;
-        padding-bottom: .25rem;
+        padding-top: .20rem;
+        padding-bottom: .20rem;
         img {
             width: 3rem;
         }
@@ -510,20 +510,11 @@ footer {
         .jumbotron {
             text-align: center;
             background: linear-gradient(-45deg, rgba($primary, .3), rgba($primary, .1));
-            background-size: 200% 200%;
-            background-position: 0% 200%;
-            transition: 1s ease background-position;
             img {
                 width: 50%;
             }
             p, h3 {
                 font-weight: 500;
-            }
-        }
-        @include hover {
-            .jumbotron {
-                background-position: 200% 0%;
-                transition: 1s ease background-position;
             }
         }
     }
@@ -534,4 +525,10 @@ footer {
             }
         }
     }
+}
+
+.template_preview {
+    margin: 0 1rem;
+    border-radius: 1rem;
+    border: 1rem solid $contrast-20;
 }

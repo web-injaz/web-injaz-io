@@ -8842,8 +8842,8 @@ svg {
   padding-bottom: 0;
   box-shadow: 0 0.5rem 1rem rgba(var(--bw-01), var(--bw-01), var(--bw-01), 0.15); }
   .navbar .navbar-brand {
-    padding-top: .25rem;
-    padding-bottom: .25rem; }
+    padding-top: .20rem;
+    padding-bottom: .20rem; }
     .navbar .navbar-brand img {
       width: 3rem; }
     .navbar .navbar-brand .current {
@@ -9150,19 +9150,18 @@ footer {
 
 .build-tools-picker .styler .jumbotron, .build-tools-picker .shaper .jumbotron {
   text-align: center;
-  background: linear-gradient(-45deg, rgba(51, 51, 102, 0.3), rgba(51, 51, 102, 0.1));
-  background-size: 200% 200%;
-  background-position: 0% 200%;
-  transition: 1s ease background-position; }
+  background: linear-gradient(-45deg, rgba(51, 51, 102, 0.3), rgba(51, 51, 102, 0.1)); }
   .build-tools-picker .styler .jumbotron img, .build-tools-picker .shaper .jumbotron img {
     width: 50%; }
   .build-tools-picker .styler .jumbotron p, .build-tools-picker .styler .jumbotron h3, .build-tools-picker .shaper .jumbotron p, .build-tools-picker .shaper .jumbotron h3 {
     font-weight: 500; }
-.build-tools-picker .styler:hover .jumbotron, .build-tools-picker .shaper:hover .jumbotron {
-  background-position: 200% 0%;
-  transition: 1s ease background-position; }
 @media (min-width: 768px) {
   .build-tools-picker .styler .jumbotron, .build-tools-picker .shaper .jumbotron {
     margin-bottom: 0; } }
+
+.template_preview {
+  margin: 0 1rem;
+  border-radius: 1rem;
+  border: 1rem solid var(--contrast-20); }
 
 /*# sourceMappingURL=index.css.map */
