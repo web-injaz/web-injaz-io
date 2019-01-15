@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Highlight from 'react-highlight';
 
 export default function CombileResult(props) {

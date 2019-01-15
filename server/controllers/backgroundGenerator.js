@@ -10,8 +10,10 @@ module.exports = (params, full = false) => {
     if(params.enable_gray === 'false' || params.enable_gray === false) sass += `$enable-gray: ${params.enable_gray};`;
     if(params.enable_darken === 'true' || params.enable_darken === true) sass += `$enable-darken: ${params.enable_darken};`;
     if(params.enable_lighten === 'true' || params.enable_lighten === true) sass += `$enable-lighten: ${params.enable_lighten};`;
-    if(params.text || params.headers || params.links) {
+    if(params.text || params.headers || params.links || params.light_inverse || params.dark_inverse) {
         map += ',(';
+            if(params.light_inverse) map += `'light-inverse': ${params.light_inverse},`;
+            if(params.dark_inverse) map += `'dark-inverse': ${params.dark_inverse},`;
             if(params.text) map += `'text': ${params.text},`;
             if(params.headers) map += `'headers': ${params.headers},`;
             if(params.links) map += `'links': ${params.links},`; 

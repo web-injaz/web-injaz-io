@@ -76,6 +76,18 @@ class StylerForm extends Component {
                         <div className="btn btn-primary show-more-btn" onClick={() => this.toggleBgMore()}>More options</div>
                         <div className={`show-more mini-section ${this.state.showMore ? '' : 'hidden'}`}>
                             <Field
+                                name="light_inverse"
+                                type="color"
+                                component={renderInput}
+                                label="Light Inverse"
+                            />
+                            <Field
+                                name="dark_inverse"
+                                type="color"
+                                component={renderInput}
+                                label="Dark Inverse"
+                            />
+                            <Field
                                 name="text"
                                 type="color"
                                 component={renderInput}

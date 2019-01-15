@@ -15,12 +15,16 @@ class Header extends React.Component {
     }
 
     render() {
+        const image = this.props.image;
+        const current = this.props.current;
+        const version = this.props.version;
+
         return (
             <Navbar light expand="sm">
                 <Link to="/">
                     <NavbarBrand>
-                        <img src={`/images/${this.props.image ? this.props.image : 'logo.png'}`} alt="webinjaz io"/>
-                        <span className="current">{this.props.current && this.props.current} <small>{this.props.version && this.props.version}</small></span>
+                        <img src={`/images/${image ? image : 'logo.png'}`} alt="webinjaz io"/>
+                        <span className="current">{current && current} <small>{version && version}</small></span>
                     </NavbarBrand>
                 </Link>
                 <NavbarToggler onClick={() => this.toggle()} />

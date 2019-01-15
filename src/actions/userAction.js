@@ -35,8 +35,7 @@ export function resSignIn(res) {
 export function signupAction(userData) {
     return function(dispatch) {
         dispatch(reqSignUp(true));
-        // axios.post('http://localhost:5000/user/register', userData)
-        axios.post('https://webinjaz.herokuapp.com/user/register', userData)
+        axios.post(`${process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://webinjaz.herokuapp.com'}/user/register`, userData)
         .then(res => {
             dispatch(reqSignUp(false));
             dispatch(resSignUp(res));
@@ -50,7 +49,7 @@ export function signupAction(userData) {
 export function signinAction(userData) {
     return function(dispatch) {
         dispatch(reqSignIn(true));
-        axios.post('http://localhost:5000/user/login', userData)
+        axios.post(`${process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://webinjaz.herokuapp.com'}/user/login`, userData)
         .then(res => {            
             dispatch(reqSignIn(false));
             dispatch(resSignIn(res));

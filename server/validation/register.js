@@ -1,5 +1,5 @@
 const validator = require('validator');
-const isEmpty = require('../../src/utilities/isEmpty');
+const isEmpty = require('lodash').isEmpty;
 
 module.exports = (data) => {
     const errors = {};

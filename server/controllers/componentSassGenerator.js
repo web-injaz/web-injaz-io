@@ -1,8 +1,8 @@
-const isEmpty = require('../util/isEmpty');
-const Component = require('../models/component');
+const isEmpty = require('lodash').isEmpty;
+// const Component = require('../models/component');
 
 function importBootstrap(check, name) {
-    if (!isEmpty(check)) {
+    if (!isEmpty(check) && check !== 'false') {
         return `@import 'node_modules/wi-framework/components/bootstrap/${name}';`;
     } else {
         return '';
@@ -10,7 +10,7 @@ function importBootstrap(check, name) {
 }
 
 function importComponents(check, name) {
-    if (!isEmpty(check)) {
+    if (!isEmpty(check) && check !== 'false') {
         return `@import 'node_modules/wi-framework/components/${name}';`;
     } else {
         return '';

@@ -23,11 +23,10 @@ function resShapesError(err) {
     }
 }
  
-export function getShapesList(shapes) {
+export function getShapesList(shapes) {    
     return function(dispatch) {
         dispatch(reqShapes());
-        axios.get(`https://webinjaz.herokuapp.com/api/shapes`, {
-        // axios.get(`http://localhost:5000/api/shapes`, {
+        axios.get(`${process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://webinjaz.herokuapp.com'}/api/shapes`, {
             params: shapes
         })
         .then(res => {
@@ -57,8 +56,7 @@ export function addShapeErrorAction(error) {
 
 export function addShape(shape) {
     return (dispatch) => {
-        axios.post(`https://webinjaz.herokuapp.com/api/shapes`, shape)
-        // axios.post(`http://localhost:5000/api/shapes`, shape)
+        axios.post(`${process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://webinjaz.herokuapp.com'}/api/shapes`, shape)
         .then(res => dispatch(addShapeAction(res.data)), 
             err => {
                 if(err) dispatch(addShapeErrorAction(err.response.data));

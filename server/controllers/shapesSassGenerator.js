@@ -1,7 +1,7 @@
-const isEmpty = require('../util/isEmpty');
+const isEmpty = require('lodash').isEmpty;
 
-function importShapes(check, comp_name, shape_name) {
-    if (!isEmpty(check)) {
+function importShapes(check, comp_name, shape_name) {    
+    if (!isEmpty(check) && check !== 'false') {
         return `@import 'node_modules/wi-theme-famous/shapes/${comp_name}/${shape_name}';`;
     } else {
         return '';

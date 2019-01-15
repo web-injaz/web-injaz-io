@@ -431,6 +431,9 @@ footer {
 }
 
 .build-demo {
+    > div {
+        background-color: transparent !important;
+    }
     .main-colors {
         display: flex;
         flex-flow: row wrap;
@@ -528,7 +531,25 @@ footer {
 }
 
 .template_preview {
-    margin: 0 1rem;
-    border-radius: 1rem;
-    border: 1rem solid $contrast-20;
+    &:not(.full) {
+        margin: 0 1rem;
+        border-radius: 1rem;
+        border: 1rem solid $contrast-20;
+    }
+}
+
+.fullscreen_toggler {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $background;
+    border-radius: 20rem;
+    height: 3rem;
+    width: 3rem;
+    text-align: center;
+    line-height: 2rem;
+    padding: .5rem;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    z-index: 999;
 }

@@ -10,35 +10,70 @@ import { compileToCss } from '../actions';
 
 import ColorsPreview from '../components/ColorsPreview';
 import CombileResult from '../components/CombileResult';
-import TemplatePreview from '../components/TemplatePreview';
+import TemplatePreview from './TemplatePreview';
 
-class Styler extends Component
-{
+class Styler extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         variables: {},
+         isFullScreen: false,
+         showToggler: false
+      }
+    }
+    
     submitHandler = values => {
         this.props.sendVariables(values);
+        this.setState({
+            variables: values,
+            showToggler: true
+        });
     }
 
-    render() {        
-        var css = this.props.result ? this.props.result.css : '';
-        var half = css.slice(css.indexOf('.bg-'), css.length);
-        var bg = half.slice(0, half.indexOf('}') + 1);
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.variables !== nextProps.variables ||
+            this.props.result !== nextProps.result ||
+            this.state.isFullScreen !== nextState.isFullScreen) {
+            return true;
+        }
+        return false;
+    }
 
-        return (            
-            <div className="bg-dark">
-                <Header image="webinjaz-styler.png" current="Styler" version="v1.0.0(beta)" />
+    fullscreenHandler = () => {
+        this.setState(prevState => ({
+            ...prevState,
+            isFullScreen: !prevState.isFullScreen
+        }))
+    }
+
+    render() {
+        return (
+            <div className="bg-dark" style={{position: 'relative'}}>
+                {!this.state.isFullScreen && <Header image="webinjaz-styler.png" current="Styler" version="v1.0.0(beta)" />}
                 <section className="build-tool-section">
-                    <StylerForm onSubmit={this.submitHandler} />
-                    <TemplatePreview variables={this.props.variables} shapesList={this.props.shapesList} bgStyle={bg} />
-                    <CombileResult result={this.props.result} error={this.props.error} />
-                    <ColorsPreview variables={this.props.variables} bgStyle={bg} />
+                    {!this.state.isFullScreen && <StylerForm onSubmit={this.submitHandler} />}
+                    <TemplatePreview 
+                        variables={this.props.variables} 
+                        result={this.props.result} 
+                        shapesList={this.props.shapesList} 
+                        isFullScreen={this.state.isFullScreen}
+                    />
+                    {!this.state.isFullScreen && <CombileResult result={this.props.result} error={this.props.error} />}
+                    {!this.state.isFullScreen && <ColorsPreview variables={this.props.variables} result={this.props.result} />}
                 </section>
-                <Footer />
+                {
+                    this.state.showToggler && <span className="fullscreen_toggler" onClick={() => this.fullscreenHandler()}>
+                        {!this.state.isFullScreen ? 'Full' : 'Back'}
+                    </span>
+                }
+                {!this.state.isFullScreen ? <Footer />: null}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {    
+const mapStateToProps = state => {
     return {
         error: state.compile.error,
         result: state.compile.result,

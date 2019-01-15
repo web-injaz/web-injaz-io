@@ -11,7 +11,7 @@ function reqCompile(variables) {
     }
 }
 
-function resCompile(result) {
+function resCompile(result) {    
     return {
         type: RES_COMPILE,
         result
@@ -28,8 +28,7 @@ function resCompileError(error) {
 export function compileToCss(variables) {
     return function(dispatch) {
         dispatch(reqCompile(variables));
-        return axios.get(`https://webinjaz.herokuapp.com/api/compile`, {
-        // axios.get('http://localhost:5000/api/compile', {
+        return axios.get(`${process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://webinjaz.herokuapp.com'}/api/compile`, {
             params: variables
         })
         .then(res => {

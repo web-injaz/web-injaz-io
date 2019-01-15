@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 export default function ColorsPreview(props) {
-    const Main = styled.div`${props.bgStyle}`;
+    const Main = styled.div`${props.result ? props.result.bg : ''}`;
 
     return (
         <Main className={`build-demo ${props.variables ? '' : 'hidden'}`}>

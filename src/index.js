@@ -19,6 +19,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import User from './containers/User';
+import TemplatePreview from './containers/TemplatePreview';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -33,6 +34,7 @@ ReactDOM.render((
                     <Route exact path="/build/shaper" component={Shaper} />
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/list" component={Shapes} />
+                    <Route exact path="/template" component={TemplatePreview} />
                     <Route exact path="/sign" component={User} />
                     <Route path="*" render={() => <Redirect to="/" />} />
                 </Switch>
